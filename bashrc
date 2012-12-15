@@ -17,5 +17,5 @@ export GREP_OPTIONS='--color=auto'
 # Aliases
 #########
 alias la='ls -lac'
-
+alias mygit='http://github.com/Superhobbes1223'
 
