@@ -19,3 +19,5 @@ export GREP_OPTIONS='--color=auto'
 alias la='ls -lac'
 alias mygit='http://github.com/Superhobbes1223'
 
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
