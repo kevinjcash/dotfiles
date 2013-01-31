@@ -14,6 +14,7 @@ ZSH_THEME="steeef"
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias la="ls -la"
+alias ls="ls -l"
 
 gd() { git diff $* | view -; }
 gdc() { gd --cached $*; }
@@ -80,4 +81,17 @@ done
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
+# start up tmux
+# If not running interactively, do not do anything
+[[ $- != *i* ]] && return
+[[ $TERM != screen* ]] && exec tmux
+
+if which tmux 2>&1 >/dev/null; then
+    # if no session is started, start a new session
+    test -z ${TMUX} && tmux
+
+    # when quitting tmux, try to attach
+    while test -z ${TMUX}; do
+        tmux attach || break
+    done
+fi
