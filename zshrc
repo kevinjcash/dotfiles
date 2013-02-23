@@ -13,8 +13,8 @@ ZSH_THEME="steeef"
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
-alias la="ls -la"
-alias ls="ls -l"
+alias la='ls -la'
+alias ls='ls -l'
 
 gd() { git diff $* | view -; }
 gdc() { gd --cached $*; }
