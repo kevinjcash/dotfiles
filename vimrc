@@ -27,6 +27,7 @@ set cursorline
 set cmdheight=2
 set switchbuf=useopen
 set numberwidth=5
+set number
 set showtabline=2
 set winwidth=79
 " This makes RVM work inside Vim. I have no idea why.
