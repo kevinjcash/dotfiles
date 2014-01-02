@@ -8,7 +8,7 @@ compinit
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="steeef"
+ZSH_THEME="powerline"
 
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
@@ -81,6 +81,7 @@ done
 
 source $ZSH/oh-my-zsh.sh
 
+#. /home/kcashman/.powerline/powerline/bindings/zsh/powerline.zsh
 # start up tmux
 # If not running interactively, do not do anything
 #[[ $- != *i* ]] && return

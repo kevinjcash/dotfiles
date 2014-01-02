@@ -34,3 +34,5 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 alias sclc='ssh root@172.16.6.251'
 alias snc='ssh root@172.16.6.27'
+
+exec /usr/bin/zsh
