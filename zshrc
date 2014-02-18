@@ -15,7 +15,7 @@ alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias la='ls -la'
 alias -g ls='ls -l'
-
+alias ops='cd ~/Documents/datacloud/datacloud-ops/trunk'
 gd() { git diff $* | view -; }
 gdc() { gd --cached $*; }
 alias pygrep="grep --include='*.py' $*"
