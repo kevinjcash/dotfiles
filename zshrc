@@ -8,14 +8,14 @@ compinit
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="powerline"
+ZSH_THEME="steeef"
 
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias la='ls -la'
-alias ls='ls -l'
-
+alias -g ls='ls -l'
+alias ops='cd ~/Documents/datacloud/datacloud-ops/trunk'
 gd() { git diff $* | view -; }
 gdc() { gd --cached $*; }
 alias pygrep="grep --include='*.py' $*"
@@ -68,10 +68,17 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git brew gem rails ruby rake rvm sublime)
 
+JAVA_HOME=/usr/local/jdk1.7.0_51
+ECLIPSE_HOME=/home/kcashman/Downloads/eclipse
+
 # Set path, separate dirs with escaped newline
 pathdirs=(
 #add dirs on their own lines
 ~/bin
+/usr/bin
+/usr/bin/javacc-5.0/bin
+$JAVA_HOME/bin
+/home/kcashman/.local/lib/aws/bin/aws
 )
 for dir in $pathdirs; do
     if [ -d $dir ]; then
