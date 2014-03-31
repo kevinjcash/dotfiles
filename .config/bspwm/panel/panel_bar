@@ -1,0 +1,48 @@
+#! /bin/sh
+#
+# Example panel for LemonBoy's bar
+
+while read -r line ; do
+    case $line in
+        S*)
+            sys_infos="${line#?}"
+            ;;
+        T*)
+            title="bspwm"
+            ;;
+        W*)
+            wm_infos=""
+            IFS=':'
+            set -- ${line#?}
+            while [ $# -gt 0 ] ; do
+                item=$1
+                name=${item#?}
+                case $item in
+                    [OFU]*)
+                        # active desktop
+                        wm_infos="$wm_infos"
+                        ;;
+                    o*)
+                        # inactive but occupied desktop
+                        wm_infos="$wm_infos"
+                        ;;
+                    f*)
+                        # inactive desktop
+                        wm_infos="$wm_infos"
+                        ;;
+                    u*)
+                        # urgent desktop
+                        wm_infos="$wm_infos"
+                        ;;
+                    L*)
+                        # layout
+#                        layout=$(printf "%s" "${name}" | sed 's/\(.\).*/\U\1/')
+                        wm_infos="$wm_infos $layout"
+                        ;;
+                esac
+                shift
+            done
+            ;;
+    esac
+    printf "%s\n" "$title$wm_infos$sys_infos"
+done

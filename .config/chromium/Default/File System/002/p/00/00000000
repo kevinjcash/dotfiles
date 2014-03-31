@@ -1,0 +1,10 @@
+15:29:32 GMT-0500 (CDT) (ERROR) /background.html: logged out while toggling clipper.
+    at LogReceiver.error (/js/common/Log.js:8:267)
+    at chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/js/main/Extension.js:17:198
+    at Auth.isAuthenticated (/js/main/Auth.js:14:404)
+    at Object.E [as toggleClipper] (/js/main/Extension.js:15:466)
+    at c (/js/common/Browser.js:7:36)
+    at Function.target.(anonymous function) (extensions::SafeBuiltins:19:14)
+    at Event.dispatchToListener (extensions::event_bindings:394:22)
+    at Event.dispatch_ (extensions::event_bindings:378:27)
+    at Event.dispatch (extensions::event_bindings:400:17)

@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+}
+#main {
+  background-clip: content-box;
+  background-color: #3C454C;
+  border: 2px solid rgba(34, 40, 44, 0.38);
+  border-radius: 5px;
+}
+
+#main > * {
+  margin-left: 13px;
+  margin-right: 13px;
+}
+
+#logo {
+  background-image: url(../../images/web-clipper-logo.png);
+  background-size: 170px 36px;
+  height: 36px;
+  margin-top: 16px;
+  width: 170px;
+}
+body.china #logo {
+  background-image: url(../../images/web-clipper-logo-china.png);
+  background-size: 88px 45px;
+  height: 45px;
+  width: 88px;
+}
+
+#close {
+  background-image: url(../../images/close_login.png);
+  background-size: 8px 8px;
+  cursor: pointer;
+  height: 8px;
+  margin: 0;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 8px;
+}
+
+.body {
+  display: none;
+}
+body.nudgeInactive #nudgeInactive {
+  display: block;
+}
+
+.header {
+  color: #4DBDCB;
+  font-family: "CaeciliaBold", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+#nudgeInactive .header {
+  margin-top: 16px;
+}
+body.china #nudgeInactive .header {
+  margin-top: 7px;
+}
+
+.details {
+  color: #C2CFD7;
+  font-family: "GothamMedium", Helvetica, Arial, sans-serif;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+#nudgeInactive .details {
+  margin-top: 6px;
+}
+body.unauthed #nudgeInactive .details {
+  margin-bottom: 12px;
+}
+
+.button {
+  background-color: #26B064;
+  border-radius: 2px;
+  box-shadow: inset 0 1px 0 0 #33CC78;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "GothamBold", Helvetica, Arial, sans-serif;
+  line-height: 28px;
+  padding: 0 18px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+.button:hover {
+  background-color: #26C66E;
+}
+.button:active {
+  background-color: #26B064;
+  box-shadow: inset 0 0 8px 3px rgba(2, 52, 24, 0.3);
+}
+#nudgeInactive .button {
+  margin-top: 23px;
+  margin-bottom: 12px;
+}
+body.unauthed #nudgeInactive .button {
+  display: none;
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5) {
+  #logo {
+    background-image: url(../../images/web-clipper-logo@2x.png);
+  }
+  body.china #logo {
+    background-image: url(../../images/web-clipper-logo-china@2x.png);
+  }
+  #close {
+    background-image: url(../../images/close_login@2x.png);
+  }
+}

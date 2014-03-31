@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Pushbullet Changelog</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+      #chrome-bell {
+        display: inline-block;
+        position:relative;
+        bottom:-3px;
+        background-image: url(/images/chrome_bell.png);
+        background-size: 25px 25px;
+        width: 25px;
+        height: 25px;
+      }
+      @media only screen and (-webkit-min-device-pixel-ratio: 2),
+             only screen and (-moz-min-device-pixel-ratio: 2),
+             only screen and (-o-min-device-pixel-ratio: 2),
+             only screen and (min-device-pixel-ratio: 2) {
+        #chrome-bell {
+          background-image: url(/images/chrome_bell@2x.png);
+        }
+      }
+    </style>
+    <script src="changelog.js"></script>
+  </head>
+  <body>
+    <div id="header">
+      <a id="logo-link" style="display:inline-block;" href="#">
+        <div id="logo"></div>
+      </a>
+    </div>
+    <div style="margin:30px 20px;">
+      <div style="margin-bottom:30px;">
+        <p style="font-weight:bold; font-size:18px;">New This Version:</p>
+        <div style="padding-left:20px;">
+          <p>Certain types of proxies will no longer prevent Pushbullet from working</p>
+          <p>Further improved overall notification reliability</p>
+          <p>Big improvements to the pushing UI--should be both easier to use and nicer looking!</p>
+          <p>If you notice any issues, you can always reach us at <a href="mailto:hey@pushbullet.com">hey@pushbullet.com</a></p>
+        </div>
+      </div>
+      <hr>
+      <div>
+        <div style="padding: 10px 5px;">
+          <p style="font-weight:bold;">Previous Versions:</p>
+        </div>
+        <div style="padding: 10px 5px;">
+          <p>Version 38-41:</p>
+          <div style="padding-left:20px;">
+            <p>Extension settings are now organized into tabs</p>
+          </div>
+        </div>
+        <div style="padding: 10px 5px;">
+          <p>Version 37:</p>
+          <div style="padding-left:20px;">
+            <p><a href="http://blog.pushbullet.com/2014/02/17/sending-a-screenshot-of-a-tab-in-chrome-is-now-as-easy-as-right-clicking/">Push a screenshot of any tab from the right-click menu!</a></p>
+          </div>
+        </div>
+        <div style="padding: 10px 5px;">
+          <p style="">Version 34-36:</p>
+          <div style="padding-left:20px;">
+            <p>Mirrored notifications now show the time it was created</p>
+            <p>Added the option to to have Pushbullet play a sound when a notification arrives</p>
+            <p>Added the option to remove Pushbullet from Chrome's right-click menu</p>
+          </div>
+        </div>
+        <div style="padding: 10px 5px;">
+          <p>Version 33:</p>
+          <div style="padding-left:20px;">
+            <p>Goes to the correct Gmail account when signed into mulitple accounts and click on a notification</p>
+            <p>Further bugfixes</p>
+          </div>
+        </div>
+        <div style="padding: 10px 5px;">
+          <p>Version 28-32:</p>
+          <div style="padding-left:20px;">
+            <p>Added the option to push to friends from the right-click menu via "Push this to...". (Refresh the page if it doesn't work at first.)</p>
+            <p>Pushbullet now remembers your in-progress note, address, or list even if the window closes.</p>
+            <p>Added a dark icon option.</p>
+            <p>Added a keyboard shortcut for dismissing notifications (Ctrl+Shift+K). Head to the bottom of chrome://extensions to customize it.</p>
+            <p>Added the option to have the right-click menu push a link to the image instead of the image itself.</p>
+          </div>
+        </div>
+        <div style="padding: 10px 5px;">
+          <p>Version 27:</p>
+          <div style="padding-left:20px;">
+            <p>Clicking on the <i id="chrome-bell"></i> in your computer's task bar will now show you your phone's notifications</p>
+            <p>This opens Chrome's Notification Center which Pushbullet now keeps in sync with your phone (not available on Linux)</p>
+            <p>Syncing requires our Android app version 13.2+ (and works best on Android 4.3+)</p>
+            <p>Added the option to keep Pushbullet running without Chrome open</p>
+          </div>
+        </div>
+        <div style="padding: 10px 5px;">
+          <p>Version 22 - 26:</p>
+          <div style="padding-left:20px;">
+            <p>Added an option to only show the titles of notifications from Android</p>
+            <p>Made the Chrome extension more network efficient</p>
+          </div>
+        </div>
+        <div style="padding: 10px 5px;">
+          <p>Version 21:</p>
+          <div style="padding-left:20px;">
+            <p>Added an <a href="options.html">Options page</a> for Pushbullet</p>
+            <p>You can now Snooze Pushbullet for a while from the Options page</p>
+            <p>Put a link to the Options page in the Pushbullet popup</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

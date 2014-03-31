@@ -1,0 +1,16 @@
+{
+   "app": {
+      "launch": {
+         "web_url": "http://reddit.com/"
+      }
+   },
+   "description": "a link to the reddit front page",
+   "icons": {
+      "128": "128.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDl3HQh5OZfWKDyde72l7RFqYjFEXZN2aBVVhMOcREHMjLvN3/H7w3uFBFZOukkaACD9KdTpouwnJI4Ynr69MipWjdm3PQdqn41esXhujCr7uWv0fi7+tSWvY42LjMReK8jnop25caBVK2rHvooZDrHaxPeB/0R0TaVpGZSlMvGlQIDAQAB",
+   "manifest_version": 2,
+   "name": "reddit",
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "0.0.0.2"
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Pushbullet</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+      body {
+        width: 420px;
+      }
+      .signed-in {
+        display: none;
+      }
+      .not-signed-in {
+        display: none;
+      }
+      .no-devices {
+        display: none;
+      }
+      .with-devices {
+        display: none;
+      }
+      #picker {
+        top:42px;
+      }
+    </style>
+    <script src="spin.min.js"></script>
+    <script src="picker.js"></script>
+    <script src="popup.js"></script>
+  </head>
+  <body>
+    <div id="header" style="font-size:14px;margin-bottom:10px;">
+      <a id="logo-link" style="display:inline-block;" href="#">
+        <div id="logo"></div>
+      </a>
+      <a id="version" style="float:right;font-size:12px;margin-left:14px;" href="#"></a>
+      <div style="float:right;line-height:34px;">
+        <div class="not-signed-in">
+          <a id="sign-in-link" href="#">Sign in</a>
+        </div>
+        <div class="signed-in">
+          <a id="view-inbox-link" href="#">View inbox</a> &nbsp;|&nbsp;
+          <a id="options-link" href="#">Options</a> &nbsp;|&nbsp;
+          <a id="sign-out-link" href="#">Sign out</a>
+        </div>
+      </div>
+    </div>
+    <div id="loading" style="height:40px;"></div>
+    <div class="not-signed-in">
+      <div>
+        <p>Pushbullet makes sending things to your phone easy and fast&mdash;never email yourself again!</p>
+      </div>
+      <div style="text-align:center; margin:30px 0;">
+        <a id="sign-up-link" class="btn btn-primary" style="padding:10px 20px;" href="#">Sign up on Pushbullet.com &rarr;</a>
+      </div>
+    </div>
+    <div class="no-devices">
+      <p><strong>No devices found, to add a device:</strong></p>
+      <div style="margin:0px 20px;">
+        <p><a id="play-store-link" href="#">Install our Android app from the Play Store</a></p>
+        <p><a id="app-store-link" href="#">Install our iOS app from the App Store</a></p>
+      </div>
+    </div>
+    <div class="with-devices">
+      <div id="push-frame">
+        <div style="position:relative;">
+          <div>
+              <input id="to" type="text" class="standard-text-input" placeholder="Device, contact, or email address">
+          </div>
+          <div id="picker"></div>
+          <div id="device_overlay" class="standard-text-input"></div>
+          <div id="standard-form">
+            <div>
+              <input id="title" type="text" class="standard-text-input">
+            </div>
+            <div style="margin-bottom:8px;">
+              <textarea id="body" class="standard-text-input" style="height:80px;"></textarea>
+            </div>
+          </div>
+          <div id="file-form" style="text-align:center;height:170px;">
+            <a id="push-file-link" style="font-weight:bold;line-height:160px;" href="#">Go to Pushbullet.com to send files &rarr;</a>
+          </div>
+          <div id="list-form" style="min-height:170px;">
+            <input id="list-title" type="text" class="standard-text-input" style="margin-bottom:20px;" placeholder="List title">
+            <div id="list-items">
+              <input type="text" placeholder="List item" name="items[]" class="standard-text-input">
+              <input type="text" placeholder="List item" name="items[]" class="standard-text-input">
+            </div>
+          </div>
+          <div style="overflow:hidden;">
+            <i id="push-note" class="push-icon push-note blank pointer"></i>
+            <i id="push-link" class="push-icon push-link blank pointer"></i>
+            <i id="push-file" class="push-icon push-file blank pointer"></i>
+            <i id="push-list" class="push-icon push-list blank pointer"></i>
+            <i id="push-address" class="push-icon push-address blank pointer"></i>
+            <a id="push-it" class="btn btn-primary" href="#" style="display:block;float:right;height:50px;line-height:50px;font-weight:bold;font-size:18px;padding:0px 15px;">Push it!</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
