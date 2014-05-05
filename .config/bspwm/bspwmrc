@@ -1,7 +1,17 @@
 #!/bin/sh
 
-bspc monitor DVI-0 I,II,III,IV
-bspc monitor DVI-1 V,VI,VII,VIII,IX,X
+i=1
+for monitor in $(bspc query -M); do
+    bspc monitor $monitor \
+        -n "$i" \
+        -d $i/{i,ii,iii,iv,v,vi,vii,viii,ix,x}
+    let i++
+done
+NMON=$i
+unset i
+
+#bspc monitor DVI-0 I,II,III,IV
+#bspc monitor DVI-1 V,VI,VII,VIII,IX,X
 
 bspc config top_padding 14 
 
@@ -39,4 +49,3 @@ if [ -e "$BSPWM_TREE" ] ; then
     rm "$BSPWM_TREE" "$BSPWM_HISTORY" "$BSPWM_STACK"
 fi
 
-/home/kcashman/.config/bspwm/panel dzen2 &
