@@ -1,11 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/Users/kevin/.oh-my-zsh'
-let g:netrw_dirhist_2='/Users/kevin/Dropbox/Code/rails_projects/sample_app/app/views'
-let g:netrw_dirhist_3='/Users/kevin/Dropbox/Code/rails_projects/sample_app/app/views/layouts'
-let g:netrw_dirhist_4='/home/kcashman/.xmonad'
-let g:netrw_dirhist_5='/home/kcashman/.config'
-let g:netrw_dirhist_6='/home/kcashman/.xmonad'
-let g:netrw_dirhist_7='/home/kcashman/.config/gnome-session'
-let g:netrw_dirhist_8='/home/kcashman/.oh-my-zsh'
-let g:netrw_dirhist_9='/Users/kevin/Documents/oh-my-zsh-powerline-theme'
+let g:netrw_dirhist_cnt =0

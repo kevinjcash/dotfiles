@@ -22,5 +22,7 @@ fi
 
 sh ~/.fehbg &
 xautolock -time 15 -locker sxlock &
+sh ~/.config/bspwm/panel/panel_bar | bar &
+compton &
 sxhkd &
 exec bspwm
