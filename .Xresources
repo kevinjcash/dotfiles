@@ -1,31 +1,38 @@
-#include "/home/kcashman/.colors/erosionedit"
+#include "/home/kevin/.colors/cash"
 
 ! urxvt
 ! Clickable URLs, tabbing, clipboard
-urxvt.perl-ext-common: default,matcher,tabbed,clipboard
+urxvt.perl-ext-common: default,matcher,clipboard
 urxvt.urlLauncher:      /usr/bin/firefox
 urxvt.matcher.button:   1 
-urxvt.tabbed.tab-bg: 11
-!urxvt.font: xft:Ubuntu Mono:size=11
+!urxvt.tabbed.tab-bg: 11
 urxvt.inputMethod: ibus
 urxvt.preeditType: OverTheSpot
 urxvt*cursorUnderline: 1
 urxvt*letterspace: -5
-urxvt*fading:          20
-urxvt*fadeColor:      #000000
+!urxvt*fading:          20
+!urxvt*fadeColor:      #000000
+urxvt*dynamicColors:    on
 urxvt*cursorBlink:     true
 urxvt*scrollBar:       false
 urxvt*depth:           32 
-urxvt*internalBorder:      5
+urxvt*internalBorder:   2
 urxvt.urgentOnBell:  true
 
 urxvt*termName: rxvt
 
-urxvt.keysym.Shift-Control-V: perl:clipboard:paste
+!urxvt.keysym.Shift-Control-V: perl:clipboard:paste
 urxvt.iso14755: False
 
-urxvt*font:             -*-terminus-medium-r-normal-*-12-*-*-*-*-*-*-* 
-urxvt*boldFont:         -*-terminus-medium-r-normal-*-12-*-*-*-*-*-*-* 
-urxvt*italicFont:       -*-terminus-medium-r-normal-*-12-*-*-*-*-*-*-* 
-urxvt*bolditalicFont:   -*-terminus-medium-r-normal-*-12-*-*-*-*-*-*-* 
+urxvt*font: -*-terminus-medium-*-*-*-12-*-*-*-*-*-*-*
+urxvt*boldFont: -*-terminus-bold-*-*-*-12-*-*-*-*-*-*-*
+urxvt*italicFont: -*-terminus-medium-*-*-*-12-*-*-*-*-*-*-*
+urxvt*bolditalicFont: -*-terminus-bold-*-*-*-12-*-*-*-*-*-*-*
 
+!Xft.antialias: 1
+!Xft.autohint: 0
+!Xft.dpi: 96
+!Xft.hinting: 1
+!Xft.hintstyle: hintfull
+!Xft.lcdfilter: lcddefault
+!Xft.rgba: rgb
