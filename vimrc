@@ -16,6 +16,7 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
+set shiftround
 set autoindent
 set laststatus=2
 set showmatch
@@ -68,6 +69,7 @@ augroup vimrcEx
   " Clear all autocmds in the group
   autocmd!
   autocmd FileType text setlocal textwidth=78
+  autocmd FileType python setlocal textwidth=79
   " Jump to last cursor position unless it's invalid or in an event handler
   autocmd BufReadPost *
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
