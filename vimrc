@@ -101,8 +101,9 @@ augroup END
 " COLOR
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 :set t_Co=256 " 256 colors
+let base16colorspace=256  " Access colors present in 256 colorspace
 :set background=dark
-:color jellybeans
+:color base16-ocean
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STATUS LINE
