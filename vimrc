@@ -70,6 +70,7 @@ augroup vimrcEx
   autocmd!
   autocmd FileType text setlocal textwidth=78
   autocmd FileType python setlocal textwidth=79
+  autocmd FileType gitcommit setlocal spell textwidth=72
   " Jump to last cursor position unless it's invalid or in an event handler
   autocmd BufReadPost *
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -114,6 +115,8 @@ let base16colorspace=256  " Access colors present in 256 colorspace
 " MISC KEY MAPS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <leader>y "*y
+" Center line with space 
+nmap <space> zz
 " Move around splits with <c-hjkl>
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
