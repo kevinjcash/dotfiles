@@ -1,4 +1,3 @@
-" This is Gary Bernhardt's .vimrc file
 " vim:set ts=2 sts=2 sw=2 expandtab:
 
 call pathogen#runtime_append_all_bundles()
@@ -27,12 +26,12 @@ set linebreak
 set ignorecase smartcase
 " highlight current line
 set cursorline
-set cmdheight=2
 set switchbuf=useopen
 set numberwidth=5
 set number
 set showtabline=2
 set winwidth=79
+set timeoutlen=1000 ttimeoutlen=0
 " This makes RVM work inside Vim. I have no idea why.
 set shell=bash
 " Prevent Vim from clobbering the scrollback buffer. See
@@ -63,6 +62,24 @@ let mapleader=","
 set rtp+=/home/kcashman/.powerline/powerline/bindings/vim
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Airline
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Syntastic
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CUSTOM AUTOCMDS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 augroup vimrcEx
@@ -81,16 +98,10 @@ augroup vimrcEx
   autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber set ai sw=2 sts=2 et
   autocmd FileType python set sw=4 sts=4 et
 
-  autocmd! BufRead,BufNewFile *.sass setfiletype sass 
-
-  autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:&gt;
-  autocmd BufRead *.markdown  set ai formatoptions=tcroqn2 comments=n:&gt;
+  autocmd! BufRead,BufNewFile *.sass setfiletype sass
 
   " Indent p tags
   autocmd FileType html,eruby if g:html_indent_tags !~ '\\|p\>' | let g:html_indent_tags .= '\|p\|li\|dt\|dd' | endif
-
-  " Don't syntax highlight markdown because it's often wrong
-  autocmd! FileType mkd setlocal syn=off
 
   " Leave the return key alone when in command line windows, since it's used
   " to run commands there.
@@ -102,42 +113,93 @@ augroup END
 " COLOR
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 :set t_Co=256 " 256 colors
-let base16colorspace=256  " Access colors present in 256 colorspace
+colorscheme hybrid
+let g:hybrid_use_Xresources = 1
 :set background=dark
-:color base16-ocean
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" STATUS LINE
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-:set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
+:set cc=79
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MISC KEY MAPS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <leader>y "*y
-" Center line with space 
+
+" Leave insert mode
+:imap ii <Esc>
+
+" Center line with space
 nmap <space> zz
+
 " Move around splits with <c-hjkl>
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
-" Insert a hash rocket with <c-l>
-imap <c-l> <space>=><space>
+
 " Can't be bothered to understand ESC vs <c-c> in insert mode
 imap <c-c> <esc>
+
 " Clear the search buffer when hitting return
 function! MapCR()
   nnoremap <cr> :nohlsearch<cr>
 endfunction
 call MapCR()
+
 nnoremap <leader><leader> <c-^>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Tagbar
-" The vim plugin that displays tags in a window, ordered by class etc. 
+" Tagbar - The vim plugin that displays tags in a window, ordered by class etc.
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nmap <F8> :TagbarToggle<CR>
+nnoremap <silent> <leader>p :TagbarToggle<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Ctrl-P - fuzzy tag matching
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Setup some default ignores
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
+  \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
+\}
+" Use regular expression
+let g:ctrlp_regexp = 1
+
+" Use the nearest .git directory as the cwd
+" This makes a lot of sense if you are working on a project that is in version
+" control. It also supports works with .svn, .hg, .bzr.
+let g:ctrlp_working_path_mode = 'r'
+
+" Use a leader instead of the actual named binding
+nnoremap <leader>. :CtrlPTag<cr>
+
+" Easy bindings for its various modes
+nmap <leader>bb :CtrlPBuffer<cr>
+nmap <leader>bm :CtrlPMixed<cr>
+nmap <leader>bs :CtrlPMRU<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Buffergator - wrangle the buffers
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Use the right side of the screen
+"let g:buffergator_viewport_split_policy = 'R'
+
+" I want my own keymappings...
+let g:buffergator_suppress_keymaps = 1
+
+" Looper buffers
+"let g:buffergator_mru_cycle_loop = 1
+
+" Go to the previous buffer open
+nmap <leader>jj :BuffergatorMruCyclePrev<cr>
+
+" Go to the next buffer open
+nmap <leader>kk :BuffergatorMruCycleNext<cr>
+
+" View the entire list of buffers open
+nmap <leader>bl :BuffergatorOpen<cr>
+
+" Shared bindings from Solution #1 from earlier
+nmap <leader>T :enew<cr>
+nmap <leader>bq :bp <BAR> bd #<cr>
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MULTIPURPOSE TAB KEY
@@ -157,10 +219,21 @@ inoremap <s-tab> <c-n>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ARROW KEYS ARE UNACCEPTABLE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <Left> <Nop>
+map <Left>  <Nop>
 map <Right> <Nop>
-map <Up> <Nop>
-map <Down> <Nop>
+map <Up>    <Nop>
+map <Down>  <Nop>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Command-T Bindings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <leader>gt  :CommandTFlush<cr>\|:CommandTTag<cr>
+map <leader>f   :CommandTFlush<cr>\|:CommandT<cr>
+map <leader>F   :CommandTFlush<cr>\|:CommandT %%<cr>
+map <leader>gm  :CommandTFlush<cr>\|:CommandT modeler<cr>
+map <leader>gl  :CommandTFlush<cr>\|:CommandT lib<cr>
+map <leader>gb  :CommandTFlush<cr>\|:CommandT browser<cr>
+map <leader>go  :CommandTFlush<cr>\|:CommandT objects<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " OPEN FILES IN DIRECTORY OF CURRENT FILE
@@ -184,189 +257,6 @@ endfunction
 map <leader>n :call RenameFile()<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" PROMOTE VARIABLE TO RSPEC LET
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! PromoteToLet()
-  :normal! dd
-  " :exec '?^\s*it\>'
-  :normal! P
-  :.s/\(\w\+\) = \(.*\)$/let(:\1) { \2 }/
-  :normal ==
-endfunction
-:command! PromoteToLet :call PromoteToLet()
-:map <leader>p :PromoteToLet<cr>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" EXTRACT VARIABLE (SKETCHY)
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! ExtractVariable()
-    let name = input("Variable name: ")
-    if name == ''
-        return
-    endif
-    " Enter visual mode (not sure why this is needed since we're already in
-    " visual mode anyway)
-    normal! gv
-
-    " Replace selected text with the variable name
-    exec "normal c" . name
-    " Define the variable on the line above
-    exec "normal! O" . name . " = "
-    " Paste the original selected text to be the variable value
-    normal! $p
-endfunction
-vnoremap <leader>rv :call ExtractVariable()<cr>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" INLINE VARIABLE (SKETCHY)
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! InlineVariable()
-    " Copy the variable under the cursor into the 'a' register
-    :let l:tmp_a = @a
-    :normal "ayiw
-    " Delete variable and equals sign
-    :normal 2daW
-    " Delete the expression into the 'b' register
-    :let l:tmp_b = @b
-    :normal "bd$
-    " Delete the remnants of the line
-    :normal dd
-    " Go to the end of the previous line so we can start our search for the
-    " usage of the variable to replace. Doing '0' instead of 'k$' doesn't
-    " work; I'm not sure why.
-    normal k$
-    " Find the next occurence of the variable
-    exec '/\<' . @a . '\>'
-    " Replace that occurence with the text we yanked
-    exec ':.s/\<' . @a . '\>/' . @b
-    :let @a = l:tmp_a
-    :let @b = l:tmp_b
-endfunction
-nnoremap <leader>ri :call InlineVariable()<cr>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" MAPS TO JUMP TO SPECIFIC COMMAND-T TARGETS AND FILES
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <leader>gr :topleft :split config/routes.rb<cr>
-function! ShowRoutes()
-  " Requires 'scratch' plugin
-  :topleft 100 :split __Routes__
-  " Make sure Vim doesn't write __Routes__ as a file
-  :set buftype=nofile
-  " Delete everything
-  :normal 1GdG
-  " Put routes output in buffer
-  :0r! rake -s routes
-  " Size window to number of lines (1 plus rake output length)
-  :exec ":normal " . line("$") . "_ "
-  " Move cursor to bottom
-  :normal 1GG
-  " Delete empty trailing line
-  :normal dd
-endfunction
-map <leader>gR :call ShowRoutes()<cr>
-map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
-map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
-map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
-map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
-map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
-map <leader>gp :CommandTFlush<cr>\|:CommandT public<cr>
-map <leader>gs :CommandTFlush<cr>\|:CommandT public/stylesheets/sass<cr>
-map <leader>gf :CommandTFlush<cr>\|:CommandT features<cr>
-map <leader>gg :topleft 100 :split Gemfile<cr>
-map <leader>gt :CommandTFlush<cr>\|:CommandTTag<cr>
-map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
-map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" SWITCH BETWEEN TEST AND PRODUCTION CODE
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! OpenTestAlternate()
-  let new_file = AlternateForCurrentFile()
-  exec ':e ' . new_file
-endfunction
-function! AlternateForCurrentFile()
-  let current_file = expand("%")
-  let new_file = current_file
-  let in_spec = match(current_file, '^spec/') != -1
-  let going_to_spec = !in_spec
-  let in_app = match(current_file, '\<controllers\>') != -1 || match(current_file, '\<models\>') != -1 || match(current_file, '\<views\>') != -1 || match(current_file, '\<helpers\>') != -1
-  if going_to_spec
-    if in_app
-      let new_file = substitute(new_file, '^app/', '', '')
-    end
-    let new_file = substitute(new_file, '\.rb$', '_spec.rb', '')
-    let new_file = 'spec/' . new_file
-  else
-    let new_file = substitute(new_file, '_spec\.rb$', '.rb', '')
-    let new_file = substitute(new_file, '^spec/', '', '')
-    if in_app
-      let new_file = 'app/' . new_file
-    end
-  endif
-  return new_file
-endfunction
-nnoremap <leader>. :call OpenTestAlternate()<cr>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" RUNNING TESTS
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <leader>t :call RunTestFile()<cr>
-map <leader>T :call RunNearestTest()<cr>
-map <leader>a :call RunTests('')<cr>
-map <leader>c :w\|:!script/features<cr>
-map <leader>w :w\|:!script/features --profile wip<cr>
-
-function! RunTestFile(...)
-    if a:0
-        let command_suffix = a:1
-    else
-        let command_suffix = ""
-    endif
-
-    " Run the tests for the previously-marked file.
-    let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\)$') != -1
-    if in_test_file
-        call SetTestFile()
-    elseif !exists("t:grb_test_file")
-        return
-    end
-    call RunTests(t:grb_test_file . command_suffix)
-endfunction
-
-function! RunNearestTest()
-    let spec_line_number = line('.')
-    call RunTestFile(":" . spec_line_number . " -b")
-endfunction
-
-function! SetTestFile()
-    " Set the spec file that tests will be run for.
-    let t:grb_test_file=@%
-endfunction
-
-function! RunTests(filename)
-    " Write the file and run tests for the given filename
-    :w
-    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
-    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
-    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
-    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
-    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
-    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
-    if match(a:filename, '\.feature$') != -1
-        exec ":!script/features " . a:filename
-    else
-        if filereadable("script/test")
-            exec ":!script/test " . a:filename
-        elseif filereadable("Gemfile")
-            exec ":!bundle exec rspec --color " . a:filename
-        else
-            exec ":!rspec --color " . a:filename
-        end
-    end
-endfunction
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Md5 COMMAND
 " Show the MD5 of the current buffer
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -386,10 +276,4 @@ function! OpenChangedFiles()
   endfor
 endfunction
 command! OpenChangedFiles :call OpenChangedFiles()
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" InsertTime COMMAND
-" Insert the current time
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-command! InsertTime :normal a<c-r>=strftime('%F %H:%M:%S.0 %z')<cr>
 
