@@ -93,6 +93,8 @@ set t_ti= t_te=
 " keep more context when scrolling off the end of a buffer
 set scrolloff=3
 " Store temporary files in a central spot
+:let g:netrw_dirhistmax = 0
+"
 set backup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
