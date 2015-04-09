@@ -10,17 +10,21 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'Lokaltog/vim-easymotion' " Vim motions on speed!
 Plugin 'Raimondi/delimitMate' " Vim plugin, provides insert mode auto-completion for quotes, parens, brackets, etc.
 Plugin 'bling/vim-airline' " lean & mean status/tabline for vim that's light as air
+Plugin 'chrisbra/NrrwRgn' " A Vim plugin for focussing on a selected region
+Plugin 'dag/vim-fish' " Vim support for editing fish scripts
+Plugin 'junegunn/rainbow_parentheses.vim' " rainbow braces for better readability
 Plugin 'elzr/vim-json' " A better JSON for Vim: distinct highlighting of keywords vs values, JSON-specific (non-JS) warnings, quote concealing.
 Plugin 'godlygeek/tabular' " Vim script for text filtering and alignment
 Plugin 'majutsushi/tagbar' " Vim plugin that displays tags in a window, ordered by scope
-Plugin 'chrisbra/NrrwRgn' " A Vim plugin for focussing on a selected region
 Plugin 'maxbrunsfeld/vim-yankstack' " A lightweight implementation of emacs's kill-ring for vim
 Plugin 'ntpeters/vim-better-whitespace' " Better whitespace highlighting for Vim
+Plugin 'parkr/vim-jekyll' " jekyll tools
 Plugin 'plasticboy/vim-markdown' " Syntax highlighting, matching rules and mappings for the original Markdown and extensions.
 Plugin 'terryma/vim-multiple-cursors' " True Sublime Text style multiple selections for Vim
 Plugin 'tpope/vim-eunuch' " helpers for UNIX
 Plugin 'tpope/vim-fugitive' " git wrapper
 Plugin 'tpope/vim-unimpaired' " pairs of handy bracket mappings
+Plugin 'wikimatze/hammer.vim' " vim, your markup language of choice, and your browser of choice.
 
 " File navigation
 Plugin 'git://git.wincent.com/command-t.git' " file finder
@@ -117,18 +121,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Syntastic
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CUSTOM AUTOCMDS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 augroup vimrcEx
@@ -149,9 +141,6 @@ augroup vimrcEx
 
   autocmd! BufRead,BufNewFile *.sass setfiletype sass
 
-  " Indent p tags
-  autocmd FileType html,eruby if g:html_indent_tags !~ '\\|p\>' | let g:html_indent_tags .= '\|p\|li\|dt\|dd' | endif
-
   " Leave the return key alone when in command line windows, since it's used
   " to run commands there.
   autocmd! CmdwinEnter * :unmap <cr>
@@ -162,10 +151,15 @@ augroup END
 " COLOR
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 :set t_Co=256 " 256 colors
-:colorscheme hybrid
 let g:hybrid_use_Xresources = 1
+colorscheme hybrid
 :set background=dark
 :set cc=79
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Rainbow Parenthesis
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd VimEnter * RainbowParentheses
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MISC KEY MAPS
