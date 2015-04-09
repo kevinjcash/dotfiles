@@ -1,5 +1,5 @@
 # Ignore all my bundles, vundle will handle them
-vim/bundle
+vim/bundle/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
