@@ -8,9 +8,5 @@ source $HOME/.vim/vimrc/mappings.vim
 source $HOME/.vim/vimrc/ctrlp.vim
 source $HOME/.vim/vimrc/buffergator.vim
 source $HOME/.vim/vimrc/command-t.vim
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Tagbar - The vim plugin that displays tags in a window, ordered by class etc.
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <silent> <leader>p :TagbarToggle<CR>
-
+source $HOME/.vim/vimrc/pluginsettings.vim
+source $HOME/.vim/vimrc/functions.vim

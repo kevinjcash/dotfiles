@@ -42,8 +42,14 @@ set cursorline
 set switchbuf=useopen
 
 " turn line numbers on and set gutter width to 5
-set number
+set relativenumber
+if v:version > 703
+      set number " hybrid relative and absolute for current line
+  endif"
 set numberwidth=5
+
+" Don't update while executing macros
+set lazyredraw
 
 " Always display tab line at top
 set showtabline=2
@@ -64,9 +70,10 @@ set scrolloff=3
 " Store temporary files in a central spot
 :let g:netrw_dirhistmax = 0
 
-set backup
-set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+" Stop dumping swps everywhere, I know how to save
+set nobackup
+set nowritebackup
+set noswapfile
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -85,3 +92,11 @@ set wildmode=longest,list
 
 " make tab completion for files/buffers act like bash
 set wildmenu
+
+" Persistent undo
+let undodir = expand('~/.undo-vim')
+if !isdirectory(undodir)
+  call mkdir(undodir)
+endif
+set undodir=~/.undo-vim
+set undofile " Create FILE.un~ files for persistent undo
