@@ -21,6 +21,7 @@ Plugin 'parkr/vim-jekyll'                 " Jekyll tools
 Plugin 'plasticboy/vim-markdown'          " Syntax highlighting, matching rules and mappings for the original Markdown and extensions.
 Plugin 'terryma/vim-multiple-cursors'     " True Sublime Text style multiple selections for Vim
 Plugin 'wikimatze/hammer.vim'             " Vim, your markup language of choice, and your browser of choice.
+Plugin 'chikamichi/mediawiki.vim'         " Mediawiki syntax
 
 " Tim Pope gets his own section
 Plugin 'tpope/vim-bundler'    " Lightweight support for Ruby's Bundler
@@ -41,7 +42,12 @@ Plugin 'sjl/vitality.vim'               " Make Vim play nicely with iTerm 2 and 
 Plugin 'christoomey/vim-tmux-navigator' " Seamless navigation between tmux panes and vim splits
 
 " Python
-Plugin 'bps/vim-textobj-python' " Text objects for python
+Plugin 'bps/vim-textobj-python'          " Text objects for python
+Plugin 'Yggdroot/indentLine'
+
+" Javascript
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'lukeyeager/JavaScript-Indent'
 
 " Pretty Colors
 Plugin 'w0ng/vim-hybrid'         " A dark colour scheme for Vim & gVim

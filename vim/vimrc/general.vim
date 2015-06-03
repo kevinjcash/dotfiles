@@ -42,10 +42,7 @@ set cursorline
 set switchbuf=useopen
 
 " turn line numbers on and set gutter width to 5
-set relativenumber
-if v:version > 703
-      set number " hybrid relative and absolute for current line
-  endif"
+set number " turn line numbers on
 set numberwidth=5
 
 " Don't update while executing macros
@@ -69,6 +66,9 @@ set scrolloff=3
 
 " Store temporary files in a central spot
 :let g:netrw_dirhistmax = 0
+
+" Run commands with bash for compatibility
+set shell=bash
 
 " Stop dumping swps everywhere, I know how to save
 set nobackup
