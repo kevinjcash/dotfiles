@@ -8,8 +8,8 @@ map <leader>y "*y
 " Leave insert mode
 :imap ii <Esc>
 
-" Center line with space
-nmap <space> zz
+" Start commands with space
+nmap <space> :
 
 " Move around splits with <c-hjkl>
 nnoremap <c-j> <c-w>j

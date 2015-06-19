@@ -35,6 +35,7 @@ Plugin 'tpope/vim-unimpaired' " Pairs of handy bracket mappings
 " File navigation
 Plugin 'git://git.wincent.com/command-t.git' " File finder
 Plugin 'kien/ctrlp.vim'                      " Fuzzy file, buffer, mru, tag, etc finder.  http://kien.github.com/ctrlp.vim
+Plugin 'nixprime/cpsm'                       " A CtrlP matcher, specialized for paths.
 Plugin 'jeetsukumaran/vim-buffergator'       " Vim plugin to list, select and switch between buffers.
 
 " tmux
