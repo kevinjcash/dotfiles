@@ -13,8 +13,9 @@ let g:airline_powerline_fonts = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 :set t_Co=256 " 256 colors
 let g:hybrid_use_Xresources = 1
-colorscheme hybrid
-:set background=dark
+let base16colorspace=256
+colorscheme base16-solarized
+:set background=light
 :set cc=79
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
