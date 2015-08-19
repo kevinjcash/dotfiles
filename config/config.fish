@@ -8,7 +8,7 @@ set fish_path $HOME/.oh-my-fish
 . $fish_path/oh-my-fish.fish
 
 # Base16 Shell
-eval sh $HOME/.config/base16-shell/base16-solarized.light.sh
+eval sh $HOME/.config/base16-shell/base16-ocean.dark.sh
 
 set -x JAVA_HOME /Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/Contents/Home
 set -x EDITOR vim
