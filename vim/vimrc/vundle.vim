@@ -24,13 +24,13 @@ Plugin 'wikimatze/hammer.vim'             " Vim, your markup language of choice,
 Plugin 'chikamichi/mediawiki.vim'         " Mediawiki syntax
 
 " Tim Pope gets his own section
-Plugin 'tpope/vim-bundler'    " Lightweight support for Ruby's Bundler
-Plugin 'tpope/vim-commentary' " Comment things out
-Plugin 'tpope/vim-eunuch'     " Helpers for UNIX
-Plugin 'tpope/vim-fugitive'   " Git wrapper
-Plugin 'tpope/vim-rails'      " Ruby on Rails power tools
-Plugin 'tpope/vim-surround'   " Wrap objects with stuff
-Plugin 'tpope/vim-unimpaired' " Pairs of handy bracket mappings
+Plugin 'tpope/vim-bundler'      " Lightweight support for Ruby's Bundler
+Plugin 'tpope/vim-commentary'   " Comment things out
+Plugin 'tpope/vim-eunuch'       " Helpers for UNIX
+Plugin 'tpope/vim-fugitive'     " Git wrapper
+Plugin 'tpope/vim-rails'        " Ruby on Rails power tools
+Plugin 'tpope/vim-surround'     " Wrap objects with stuff
+Plugin 'tpope/vim-unimpaired'   " Pairs of handy bracket mappings
 
 " File navigation
 Plugin 'git://git.wincent.com/command-t.git' " File finder
@@ -51,9 +51,8 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'lukeyeager/JavaScript-Indent'
 
 " Pretty Colors
-Plugin 'w0ng/vim-hybrid'         " A dark colour scheme for Vim & gVim
-Plugin 'chriskempson/base16-vim' " Colorscheme collection
-
+Plugin 'w0ng/vim-hybrid'                    " A dark colour scheme for Vim & gVim
+Plugin 'altercation/vim-colors-solarized'   " Solarized
 call vundle#end()            " required
 filetype plugin indent on    " required
 
