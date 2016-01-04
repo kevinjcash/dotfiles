@@ -22,6 +22,8 @@ Plugin 'plasticboy/vim-markdown'          " Syntax highlighting, matching rules 
 Plugin 'terryma/vim-multiple-cursors'     " True Sublime Text style multiple selections for Vim
 Plugin 'wikimatze/hammer.vim'             " Vim, your markup language of choice, and your browser of choice.
 Plugin 'chikamichi/mediawiki.vim'         " Mediawiki syntax
+Plugin 'mbbill/undotree'                  " View the undo tree
+Plugin 'scrooloose/nerdtree'              " View the directory tree
 
 " Tim Pope gets his own section
 Plugin 'tpope/vim-bundler'      " Lightweight support for Ruby's Bundler
@@ -51,8 +53,9 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'lukeyeager/JavaScript-Indent'
 
 " Pretty Colors
-Plugin 'w0ng/vim-hybrid'                    " A dark colour scheme for Vim & gVim
+Plugin 'flazz/vim-colorschemes'             " beaucoup colors
 Plugin 'altercation/vim-colors-solarized'   " Solarized
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 

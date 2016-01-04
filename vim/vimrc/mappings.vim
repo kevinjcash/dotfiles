@@ -43,8 +43,11 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>e :edit %%
 map <leader>v :view %%
 
-map <leader>cp call copymode
-function! Copymode()
-  IndentLinesToggle
-  set nonumber!<CR>
-endfunction
+"map <leader>cp call copymode
+"function! Copymode()
+"  IndentLinesToggle
+"  set nonumber!<CR>
+"endfunction
+
+set pastetoggle=<F2>
+
