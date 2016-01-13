@@ -7,7 +7,7 @@ Plugin 'gmarik/Vundle.vim'
 
 Plugin 'Lokaltog/vim-easymotion'          " Vim motions on speed!
 Plugin 'Raimondi/delimitMate'             " Vim plugin, provides insert mode auto-completion for quotes, parens, brackets, etc.
-" Plugin 'bling/vim-airline'                " Lean & mean status/tabline for vim that's light as air
+Plugin 'bling/vim-airline'                " Lean & mean status/tabline for vim that's light as air
 Plugin 'chrisbra/NrrwRgn'                 " A Vim plugin for focussing on a selected region
 Plugin 'dag/vim-fish'                     " Vim support for editing fish scripts
 Plugin 'junegunn/rainbow_parentheses.vim' " Rainbow braces for better readability
