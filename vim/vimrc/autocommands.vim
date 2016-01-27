@@ -7,6 +7,7 @@ augroup vimrcEx
   autocmd FileType text setlocal textwidth=78
   autocmd FileType python setlocal textwidth=79
   autocmd FileType gitcommit setlocal spell textwidth=72
+
   " Jump to last cursor position unless it's invalid or in an event handler
   autocmd BufReadPost *
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -22,3 +23,5 @@ augroup vimrcEx
   autocmd! CmdwinEnter * :unmap <cr>
   autocmd! CmdwinLeave * :call MapCR()
 augroup END
+
+
