@@ -6,7 +6,7 @@ syntax on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-
+let g:airline_theme = 'badwolf'
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -24,3 +24,5 @@ colorscheme Tomorrow-Night
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd VimEnter * RainbowParentheses
 
+" Turn off autoindent for yaml
+autocmd FileType yaml setlocal indentexpr=

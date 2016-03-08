@@ -7,24 +7,19 @@ Plugin 'gmarik/Vundle.vim'
 
 Plugin 'Lokaltog/vim-easymotion'          " Vim motions on speed!
 Plugin 'Raimondi/delimitMate'             " Vim plugin, provides insert mode auto-completion for quotes, parens, brackets, etc.
-Plugin 'airblade/vim-gitgutter'           " Git diff
-Plugin 'bling/vim-airline'                " Lean & mean status/tabline for vim that's light as air
 Plugin 'chikamichi/mediawiki.vim'         " Mediawiki syntax
 Plugin 'chrisbra/NrrwRgn'                 " A Vim plugin for focussing on a selected region
-Plugin 'dag/vim-fish'                     " Vim support for editing fish scripts
 Plugin 'elzr/vim-json'                    " A better JSON for Vim: distinct highlighting of keywords vs values, JSON-specific (non-JS) warnings, quote concealing.
-Plugin 'godlygeek/tabular'                " Vim script for text filtering and alignment
-Plugin 'junegunn/rainbow_parentheses.vim' " Rainbow braces for better readability
 Plugin 'kana/vim-textobj-user'            " Create your own text objects
-Plugin 'majutsushi/tagbar'                " Vim plugin that displays tags in a window, ordered by scope
 Plugin 'maxbrunsfeld/vim-yankstack'       " A lightweight implementation of emacs's kill-ring for vim
 Plugin 'mbbill/undotree'                  " View the undo tree
-Plugin 'ntpeters/vim-better-whitespace'   " Better whitespace highlighting for Vim
 Plugin 'parkr/vim-jekyll'                 " Jekyll tools
+Plugin 'godlygeek/tabular'                " Vim script for text filtering and alignment
 Plugin 'plasticboy/vim-markdown'          " Syntax highlighting, matching rules and mappings for the original Markdown and extensions.
-Plugin 'scrooloose/nerdtree'              " View the directory tree
-Plugin 'terryma/vim-multiple-cursors'     " True Sublime Text style multiple selections for Vim
 Plugin 'wikimatze/hammer.vim'             " Vim, your markup language of choice, and your browser of choice.
+Plugin 'Valloric/youcompleteme'           " Code completion
+Plugin 'stephpy/vim-yaml'                 " Yaml syntax
+Plugin 'scrooloose/syntastic'             " Syntax linter
 
 " Tim Pope gets his own section
 Plugin 'tpope/vim-bundler'      " Lightweight support for Ruby's Bundler
@@ -34,6 +29,15 @@ Plugin 'tpope/vim-fugitive'     " Git wrapper
 Plugin 'tpope/vim-rails'        " Ruby on Rails power tools
 Plugin 'tpope/vim-surround'     " Wrap objects with stuff
 Plugin 'tpope/vim-unimpaired'   " Pairs of handy bracket mappings
+Plugin 'tpope/vim-vinegar'      " Directory browsing
+
+" UI
+Plugin 'airblade/vim-gitgutter'           " Git diff
+Plugin 'vim-airline/vim-airline'          " Lean & mean status/tabline for vim that's light as air
+Plugin 'vim-airline/vim-airline-themes'   " Lean & mean status/tabline for vim that's light as air
+Plugin 'junegunn/rainbow_parentheses.vim' " Rainbow braces for better readability
+Plugin 'majutsushi/tagbar'                " Vim plugin that displays tags in a window, ordered by scope
+Plugin 'ntpeters/vim-better-whitespace'   " Better whitespace highlighting for Vim
 
 " File navigation
 Plugin 'git://git.wincent.com/command-t.git' " File finder

@@ -5,9 +5,6 @@ let mapleader=","
 
 map <leader>y "*y
 
-" Leave insert mode
-:imap ii <Esc>
-
 " Start commands with space
 nmap <space> :
 
@@ -51,3 +48,4 @@ map <leader>v :view %%
 
 set pastetoggle=<F2>
 
+nnoremap <leader>n :NERDTreeToggle<cr>
