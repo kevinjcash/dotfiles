@@ -6,7 +6,7 @@ syntax on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'badwolf'
+let g:airline_theme = 'solarized'
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -15,8 +15,8 @@ let g:airline_theme = 'badwolf'
 :set t_Co=256 " 256 colors
 let g:hybrid_use_Xresources = 1
 let base16colorspace=256
-colorscheme Tomorrow-Night
-:set background=dark
+colorscheme solarized
+:set background=light
 :set cc=79
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -26,3 +26,8 @@ autocmd VimEnter * RainbowParentheses
 
 " Turn off autoindent for yaml
 autocmd FileType yaml setlocal indentexpr=
+
+set guifont=Hack:h12
+set guioptions-=r
+
+
