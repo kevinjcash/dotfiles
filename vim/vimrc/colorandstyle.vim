@@ -6,7 +6,9 @@ syntax on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'solarized'
+let g:airline_theme = 'tomorrow'
+let g:airline_left_sep=' '
+let g:airline_right_sep=' '
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -15,8 +17,8 @@ let g:airline_theme = 'solarized'
 :set t_Co=256 " 256 colors
 let g:hybrid_use_Xresources = 1
 let base16colorspace=256
-colorscheme solarized
-:set background=light
+colorscheme tomorrow-night
+:set background=dark
 :set cc=79
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

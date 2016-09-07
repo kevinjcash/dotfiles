@@ -40,7 +40,7 @@ Plugin 'majutsushi/tagbar'                " Vim plugin that displays tags in a w
 Plugin 'ntpeters/vim-better-whitespace'   " Better whitespace highlighting for Vim
 
 " File navigation
-Plugin 'git://git.wincent.com/command-t.git' " File finder
+" Plugin 'git://git.wincent.com/command-t.git' " File finder
 Plugin 'kien/ctrlp.vim'                      " Fuzzy file, buffer, mru, tag, etc finder.  http://kien.github.com/ctrlp.vim
 Plugin 'nixprime/cpsm'                       " A CtrlP matcher, specialized for paths.
 Plugin 'jeetsukumaran/vim-buffergator'       " Vim plugin to list, select and switch between buffers.
@@ -52,6 +52,7 @@ Plugin 'christoomey/vim-tmux-navigator' " Seamless navigation between tmux panes
 " Python
 Plugin 'bps/vim-textobj-python'          " Text objects for python
 Plugin 'Yggdroot/indentLine'
+Plugin 'python.vim'
 
 " Javascript
 Plugin 'jelera/vim-javascript-syntax'

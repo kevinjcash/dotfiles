@@ -24,3 +24,6 @@ nnoremap <leader>. :CtrlPTag<cr>
 nmap <leader>bb :CtrlPBuffer<cr>
 nmap <leader>bm :CtrlPMixed<cr>
 nmap <leader>bs :CtrlPMRU<cr>
+
+let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
+
