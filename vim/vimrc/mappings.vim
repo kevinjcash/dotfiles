@@ -47,5 +47,3 @@ map <leader>v :view %%
 "endfunction
 
 set pastetoggle=<F2>
-
-nnoremap <leader>n :NERDTreeToggle<cr>

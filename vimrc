@@ -11,3 +11,4 @@ source $HOME/.vim/vimrc/command-t.vim
 source $HOME/.vim/vimrc/pluginsettings.vim
 source $HOME/.vim/vimrc/functions.vim
 source $HOME/.vim/vimrc/zenoss.vim
+source $HOME/.vim/vimrc/last.vim
