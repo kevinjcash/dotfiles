@@ -25,6 +25,9 @@ Plugin 'scrooloose/syntastic'             " Syntax linter
 Plugin 'SirVer/ultisnips'                 " Snippets
 Plugin 'honza/vim-snippets'
 
+" Go
+Plugin 'fatih/vim-go'
+
 " Tim Pope gets his own section
 Plugin 'tpope/vim-bundler'      " Lightweight support for Ruby's Bundler
 Plugin 'tpope/vim-commentary'   " Comment things out

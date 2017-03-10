@@ -1,12 +1,13 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MISC KEY MAPS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let mapleader=","
+" let mapleader=","
+map <Space> <leader>
 
 map <leader>y "*y
 
 " Start commands with space
-nmap <space> :
+" nmap <space> :
 
 " Move around splits with <c-hjkl>
 nnoremap <c-j> <c-w>j

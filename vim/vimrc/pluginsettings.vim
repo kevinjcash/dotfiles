@@ -1,7 +1,9 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tagbar - The vim plugin that displays tags in a window, ordered by class etc.
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <silent> <leader>p :TagbarToggle<CR>
+nnoremap <silent> <leader>t :TagbarToggle<CR>
+let g:tagbar_autofocus = 1
+let g:tagbar_compact = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " VIM-JSON - Don't conceal quotes
@@ -52,8 +54,13 @@ nnoremap \ :Ag<SPACE>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ultisnips
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ycm_key_list_previous_completion=['<Up>']
 let g:UltiSnipsExpandTrigger="<c-e>"
-let g:UltiSnipsListSnippets="<c-l>"
+" let g:UltiSnipsListSnippets="<c-l>"
 " If you want :UltiSnipsEdit to split your window.
 "  let g:UltiSnipsEditSplit="vertical"
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" YouCompleteMe
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_key_list_previous_completion=['<Up>']
