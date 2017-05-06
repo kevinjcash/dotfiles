@@ -6,18 +6,22 @@ syntax on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'tomorrow'
-let g:airline_left_sep=' '
-let g:airline_right_sep=' '
+let g:airline_theme='base16'
+let g:airline_left_alt_sep=' |'
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COLOR
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let base16colorspace=256
 :set t_Co=256 " 256 colors
 let g:hybrid_use_Xresources = 1
-let base16colorspace=256
-colorscheme tomorrow-night-eighties
+if filereadable(expand("~/.vimrc_background"))
+    let base16colorspace=256
+    source ~/.vimrc_background
+else
+    colorscheme base16-tomorrow-night
+endif
 :set background=dark
 :set cc=79
 

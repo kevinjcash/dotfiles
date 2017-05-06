@@ -14,9 +14,6 @@ let g:ctrlp_regexp = 1
 " control. It also supports works with .svn, .hg, .bzr.
 let g:ctrlp_working_path_mode = 'r'
 
-" Use the cpsm matcher
-" let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
-
 " Use a leader instead of the actual named binding
 nnoremap <leader>. :CtrlPTag<cr>
 

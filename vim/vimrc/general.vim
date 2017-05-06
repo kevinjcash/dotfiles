@@ -44,6 +44,7 @@ set switchbuf=useopen
 " turn line numbers on and set gutter width to 5
 set number " turn line numbers on
 set numberwidth=5
+set relativenumber
 
 " Don't update while executing macros
 set lazyredraw

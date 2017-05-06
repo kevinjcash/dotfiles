@@ -11,9 +11,9 @@ let g:tagbar_compact = 1
 let g:vim_json_syntax_conceal = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" VIM-Markdown - Don't conceal things
+" VIM-Markdown - 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:vim_markdown_conceal = 0
+" let g:markdown_enable_folding = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntasic

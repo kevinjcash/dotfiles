@@ -1,5 +1,8 @@
 ZSH_THEME="lambda-mod"
 plugins=(git sublime fancy-ctrl-z docker common-aliases)
+BASE16_SHELL=$HOME/.config/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+
 
 export ZSH=/Users/cashman/.oh-my-zsh
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/bin"
@@ -8,6 +11,7 @@ export HOMEBREW_GITHUB_API_TOKEN=54c63339ea1efefdea47956a7f95e05593866212
 export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+export VAULT_ADDR="http://vault.wayblazer.systems:8200"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -27,6 +31,7 @@ alias zshconfig="vim ~/.zshrc"
 alias git="/usr/local/bin/git"
 alias vundlesync="vim +PluginInstall +PluginUpdate +PluginRemove +qall"
 alias grin="grep -rIn"
+alias vimconfig="vim ~/.vim/vimrc"
 alias k="kubectl"
 alias kd="kubectl describe"
 alias kg="kubectl get"
@@ -43,3 +48,6 @@ setns() {
     kubectl config set-context $CONTEXT --namespace=$1
 }
 
+get_pod_env() {
+    kubectl get pods -o json $1 | jq '.spec.containers[0].env[] | {(.name): (.value)}' | jq -s add
+}
