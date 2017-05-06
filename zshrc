@@ -11,7 +11,6 @@ export HOMEBREW_GITHUB_API_TOKEN=54c63339ea1efefdea47956a7f95e05593866212
 export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
-export VAULT_ADDR="http://vault.wayblazer.systems:8200"
 
 source $ZSH/oh-my-zsh.sh
 
