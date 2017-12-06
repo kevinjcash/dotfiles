@@ -35,8 +35,6 @@ export HOMEBREW_GITHUB_API_TOKEN=54c63339ea1efefdea47956a7f95e05593866212
 export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin:/usr/local/sbin
-export VAULT_ADDR="https://vault.wayblazer.systems:8200"
-export SCREEPS_DIR=/Users/cashman/Library/Application\ Support/Screeps/scripts/screeps.com/default
 
 source $ZSH/oh-my-zsh.sh
 
