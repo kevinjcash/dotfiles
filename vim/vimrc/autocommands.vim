@@ -22,10 +22,9 @@ augroup vimrcEx
   " to run commands there.
   autocmd! CmdwinEnter * :unmap <cr>
   autocmd! CmdwinLeave * :call MapCR()
+
+  " Note, perl automatically sets foldmethod in the syntax file
+  " autocmd Syntax python setlocal foldmethod=syntax
+  autocmd Syntax python normal zR
 augroup END
 
-augroup pencil
-    autocmd!
-    autocmd FileType markdown,mkd call pencil#init()
-    autocmd FileType text         call pencil#init()
-augroup END

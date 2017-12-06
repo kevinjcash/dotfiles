@@ -6,7 +6,7 @@ syntax on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme='base16'
+let g:airline_theme='base16_eighties'
 let g:airline_left_alt_sep=' |'
 
 
@@ -20,7 +20,7 @@ if filereadable(expand("~/.vimrc_background"))
     let base16colorspace=256
     source ~/.vimrc_background
 else
-    colorscheme base16-tomorrow-night
+    colorscheme base16-tomorrow-night-eighties
 endif
 :set background=dark
 :set cc=79

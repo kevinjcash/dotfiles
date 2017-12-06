@@ -11,27 +11,9 @@ let g:tagbar_compact = 1
 let g:vim_json_syntax_conceal = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" VIM-Markdown - 
+" VIM-Markdown
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " let g:markdown_enable_folding = 1
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Syntasic
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-nmap <leader>sc :SyntasticCheck<CR>
-nmap <leader>sr :SyntasticReset<CR>
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-
-let g:syntastic_yaml_checkers = ['yamllint']
-let g:syntastic_json_checkers = ['jsonlint']
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Silver Searcher
@@ -64,3 +46,20 @@ let g:UltiSnipsExpandTrigger="<c-e>"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_key_list_previous_completion=['<Up>']
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" python-mode
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:pymode_python = 'python3'
+let g:pymode_lint_checkers = ['pep8']
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" fzf
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set rtp+=/usr/local/opt/fzf
+set rtp+=~/.fzf
+nmap ; :Buffers<CR>
+nmap <Leader>r :Tags<CR>
+nmap <Leader>t :Files<CR>
+nmap <Leader>a :Ag<CR>
+

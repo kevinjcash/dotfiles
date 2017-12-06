@@ -17,7 +17,8 @@ Plugin 'kana/vim-textobj-user'            " Create your own text objects
 Plugin 'maxbrunsfeld/vim-yankstack'       " A lightweight implementation of emacs's kill-ring for vim
 Plugin 'mbbill/undotree'                  " View the undo tree
 Plugin 'parkr/vim-jekyll'                 " Jekyll tools
-Plugin 'scrooloose/syntastic'             " Syntax linter
+" Plugin 'scrooloose/syntastic'           " Syntax linter
+Plugin 'w0rp/ale'                         " Async Linting Engine
 Plugin 'stephpy/vim-yaml'                 " Yaml syntax
 Plugin 'wikimatze/hammer.vim'             " Vim, your markup language of choice, and your browser of choice.
 
@@ -49,10 +50,11 @@ Plugin 'majutsushi/tagbar'                " Vim plugin that displays tags in a w
 Plugin 'ntpeters/vim-better-whitespace'   " Better whitespace highlighting for Vim
 
 " File navigation
-" Plugin 'git://git.wincent.com/command-t.git' " File finder
-Plugin 'ctrlpvim/ctrlp.vim'                      " Fuzzy file, buffer, mru, tag, etc finder.  http://kien.github.com/ctrlp.vim
-" Plugin 'nixprime/cpsm'                       " A CtrlP matcher, specialized for paths.
-Plugin 'jeetsukumaran/vim-buffergator'       " Vim plugin to list, select and switch between buffers.
+" Plugin 'git://git.wincent.com/command-t.git'  " File finder
+" Plugin 'ctrlpvim/ctrlp.vim'                   " Fuzzy file, buffer, mru, tag, etc finder.  http://kien.github.com/ctrlp.vim
+" Plugin 'nixprime/cpsm'                        " A CtrlP matcher, specialized for paths.
+Plugin 'junegunn/fzf.vim'                       " fuh zee find
+Plugin 'jeetsukumaran/vim-buffergator'          " Vim plugin to list, select and switch between buffers.
 
 " Writing
 Plugin 'reedes/vim-pencil'
@@ -71,6 +73,7 @@ Plugin 'python-mode/python-mode'
 " Javascript
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'lukeyeager/JavaScript-Indent'
+Plugin 'leafgarland/typescript-vim'
 
 " Pretty Colors
 Plugin 'flazz/vim-colorschemes'             " beaucoup colors
