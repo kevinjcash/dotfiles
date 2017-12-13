@@ -28,7 +28,7 @@ _color() {
 }
 
 
-export ZSH=/Users/cashman/.oh-my-zsh
+export ZSH=/Users/kevincashman/.oh-my-zsh
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/bin"
 export KUBE_EDITOR="/usr/local/bin/vim"
 export HOMEBREW_GITHUB_API_TOKEN=54c63339ea1efefdea47956a7f95e05593866212
@@ -49,9 +49,9 @@ source $ZSH/oh-my-zsh.sh
 
 # eval $(docker-machine env default)
 
-alias git="/usr/local/bin/git"
 alias grin="grep -rIn"
 alias ll="ls -lh"
+alias vim='/usr/local/bin/vim'
 alias vimconfig="vim ~/.vim/vimrc"
 alias vundlesync="vim +PluginInstall +PluginUpdate +PluginRemove +qall"
 alias zshconfig="vim ~/.zshrc"
@@ -112,3 +112,5 @@ if _has fzf && _has ag; then
   # --color info:108,prompt:109,spinner:108,pointer:168,marker:168
   # '
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
