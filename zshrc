@@ -1,5 +1,5 @@
 ZSH_THEME="lambda-mod"
-plugins=(git sublime fancy-ctrl-z docker common-aliases osx)
+plugins=(git fancy-ctrl-z docker common-aliases osx virtualenvwrapper virtualenv)
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
@@ -34,7 +34,7 @@ export KUBE_EDITOR="/usr/local/bin/vim"
 export HOMEBREW_GITHUB_API_TOKEN=54c63339ea1efefdea47956a7f95e05593866212
 export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin:/usr/local/sbin
+export PATH=$PATH:$GOPATH/bin:/usr/local/sbin:/usr/local/opt/python/libexec/bin
 
 source $ZSH/oh-my-zsh.sh
 
@@ -76,6 +76,9 @@ alias gc="git commit"
 alias gco="git checkout"
 alias gp="git pull"
 
+# Umbel aliases
+alias sop="ssh ops"
+
 setns() {
     export CONTEXT=$(kubectl config view | grep current-context | awk '{print $2}')
     kubectl config set-context $CONTEXT --namespace=$1
@@ -114,3 +117,11 @@ if _has fzf && _has ag; then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+function virtualenv_info {
+    [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
+}
+
+eval "$(ssh-agent -s)"
+ssh-add -K ~/.ssh/salt

@@ -54,7 +54,6 @@ Plugin 'ntpeters/vim-better-whitespace'   " Better whitespace highlighting for V
 " Plugin 'ctrlpvim/ctrlp.vim'                   " Fuzzy file, buffer, mru, tag, etc finder.  http://kien.github.com/ctrlp.vim
 " Plugin 'nixprime/cpsm'                        " A CtrlP matcher, specialized for paths.
 Plugin 'junegunn/fzf.vim'                       " fuh zee find
-Plugin 'jeetsukumaran/vim-buffergator'          " Vim plugin to list, select and switch between buffers.
 
 " Writing
 Plugin 'reedes/vim-pencil'

@@ -95,4 +95,4 @@ if !isdirectory(undodir)
 endif
 set undodir=~/.undo-vim
 set undofile " Create FILE.un~ files for persistent undo
-set tags=~/tags;
+set tags=~/tags,~/umbel/tags;
