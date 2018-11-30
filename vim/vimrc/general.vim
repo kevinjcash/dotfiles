@@ -43,8 +43,8 @@ set switchbuf=useopen
 
 " turn line numbers on and set gutter width to 5
 set number " turn line numbers on
-set numberwidth=5
-set relativenumber
+" set numberwidth=5
+" set relativenumber
 
 " Don't update while executing macros
 set lazyredraw
@@ -96,3 +96,8 @@ endif
 set undodir=~/.undo-vim
 set undofile " Create FILE.un~ files for persistent undo
 set tags=~/tags,~/umbel/tags;
+set autochdir
+
+if has('python3')
+    silent! python3 1
+endif

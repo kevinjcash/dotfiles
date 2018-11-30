@@ -5,22 +5,25 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'lokaltog/vim-easymotion'          " Vim motions on speed!
+" Plugin 'lokaltog/vim-easymotion'          " Vim motions on speed!
 Plugin 'raimondi/delimitmate'             " Vim plugin, provides insert mode auto-completion for quotes, parens, brackets, etc.
 Plugin 'valloric/youcompleteme'           " Code completion
-Plugin 'chikamichi/mediawiki.vim'         " Mediawiki syntax
-Plugin 'chrisbra/nrrwrgn'                 " A Vim plugin for focussing on a selected region
-Plugin 'elzr/vim-json'                    " A better JSON for Vim: distinct highlighting of keywords vs values, JSON-specific (non-JS) warnings, quote concealing.
+" Plugin 'chikamichi/mediawiki.vim'         " Mediawiki syntax
+" Plugin 'chrisbra/nrrwrgn'                 " A Vim plugin for focussing on a selected region
 Plugin 'gabrielelana/vim-markdown'
 Plugin 'godlygeek/tabular'                " Vim script for text filtering and alignment
 Plugin 'kana/vim-textobj-user'            " Create your own text objects
-Plugin 'maxbrunsfeld/vim-yankstack'       " A lightweight implementation of emacs's kill-ring for vim
-Plugin 'mbbill/undotree'                  " View the undo tree
-Plugin 'parkr/vim-jekyll'                 " Jekyll tools
+" Plugin 'maxbrunsfeld/vim-yankstack'       " A lightweight implementation of emacs's kill-ring for vim
+" Plugin 'mbbill/undotree'                  " View the undo tree
 " Plugin 'scrooloose/syntastic'           " Syntax linter
 Plugin 'w0rp/ale'                         " Async Linting Engine
+" Plugin 'wikimatze/hammer.vim'             " Vim, your markup language of choice, and your browser of choice.
+
+" Syntax Highlighting
+Plugin 'elzr/vim-json'                    " A better JSON for Vim: distinct highlighting of keywords vs values, JSON-specific (non-JS) warnings, quote concealing.
+Plugin 'saltstack/salt-vim'               " Highlighting for salt files
+Plugin 'chr4/nginx.vim'                   " Nginx
 Plugin 'stephpy/vim-yaml'                 " Yaml syntax
-Plugin 'wikimatze/hammer.vim'             " Vim, your markup language of choice, and your browser of choice.
 
 " Snippets
 Plugin 'sirver/ultisnips'                 " Snippets
@@ -30,12 +33,12 @@ Plugin 'honza/vim-snippets'
 Plugin 'fatih/vim-go'
 
 " Tim Pope gets his own section
-Plugin 'tpope/vim-bundler'      " Lightweight support for Ruby's Bundler
+" Plugin 'tpope/vim-bundler'      " Lightweight support for Ruby's Bundler
 Plugin 'tpope/vim-commentary'   " Comment things out
 Plugin 'tpope/vim-dispatch'     " Dispatch build and test jobs
 Plugin 'tpope/vim-eunuch'       " Helpers for UNIX
 Plugin 'tpope/vim-fugitive'     " Git wrapper
-Plugin 'tpope/vim-rails'        " Ruby on Rails power tools
+" Plugin 'tpope/vim-rails'        " Ruby on Rails power tools
 Plugin 'tpope/vim-rhubarb'      " Github
 Plugin 'tpope/vim-sensible'     " Sensible defaults
 Plugin 'tpope/vim-surround'     " Wrap objects with stuff
@@ -43,10 +46,10 @@ Plugin 'tpope/vim-unimpaired'   " Pairs of handy bracket mappings
 Plugin 'tpope/vim-vinegar'      " Directory browsing
 
 " UI
-Plugin 'airblade/vim-gitgutter'           " Git diff
-Plugin 'vim-airline/vim-airline'          " Lean & mean status/tabline for vim that's light as air
-Plugin 'vim-airline/vim-airline-themes'   " Lean & mean status/tabline for vim that's light as air
-Plugin 'majutsushi/tagbar'                " Vim plugin that displays tags in a window, ordered by scope
+" Plugin 'airblade/vim-gitgutter'           " Git diff
+" Plugin 'vim-airline/vim-airline'          " Lean & mean status/tabline for vim that's light as air
+" Plugin 'vim-airline/vim-airline-themes'   " Lean & mean status/tabline for vim that's light as air
+" Plugin 'majutsushi/tagbar'                " Vim plugin that displays tags in a window, ordered by scope
 Plugin 'ntpeters/vim-better-whitespace'   " Better whitespace highlighting for Vim
 
 " File navigation
@@ -55,10 +58,6 @@ Plugin 'ntpeters/vim-better-whitespace'   " Better whitespace highlighting for V
 " Plugin 'nixprime/cpsm'                        " A CtrlP matcher, specialized for paths.
 Plugin 'junegunn/fzf.vim'                       " fuh zee find
 
-" Writing
-Plugin 'reedes/vim-pencil'
-Plugin 'junegunn/goyo.vim'
-
 " tmux
 Plugin 'sjl/vitality.vim'               " Make Vim play nicely with iTerm 2 and tmux.
 Plugin 'christoomey/vim-tmux-navigator' " Seamless navigation between tmux panes and vim splits
@@ -66,13 +65,13 @@ Plugin 'christoomey/vim-tmux-navigator' " Seamless navigation between tmux panes
 " Python
 Plugin 'Yggdroot/indentLine'
 Plugin 'bps/vim-textobj-python'          " Text objects for python
-Plugin 'tell-k/vim-autopep8'
+" Plugin 'tell-k/vim-autopep8'
 Plugin 'python-mode/python-mode'
 
 " Javascript
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'lukeyeager/JavaScript-Indent'
-Plugin 'leafgarland/typescript-vim'
+" Plugin 'leafgarland/typescript-vim'
 
 " Pretty Colors
 Plugin 'flazz/vim-colorschemes'             " beaucoup colors

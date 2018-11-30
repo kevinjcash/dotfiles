@@ -51,7 +51,9 @@ let g:ycm_key_list_previous_completion=['<Up>']
 " python-mode
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:pymode_python = 'python3'
-let g:pymode_lint_checkers = ['pep8']
+let g:pymode_lint = 1
+let g:pymode_virtualenv = 1
+" let g:pymode_lint_checkers = ['pep8']
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fzf
@@ -62,6 +64,7 @@ nmap ; :Buffers<CR>
 nmap <Leader>r :Tags<CR>
 nmap <Leader>f :Files<CR>
 nmap <Leader>a :Ag<CR>
+nnoremap <silent> <Leader><Leader> :Files <C-R>=expand('%:h')<CR><CR>
 
 " Customize fzf colors to match your color scheme
 let g:fzf_colors =
@@ -84,7 +87,7 @@ let g:fzf_colors =
 " previous-history instead of down and up. If you don't like the change,
 " explicitly bind the keys to down and up in your $FZF_DEFAULT_OPTS.
 let g:fzf_history_dir = '~/.local/share/fzf-history'
-
+let g:fzf_launcher = "~/.vim/fzf_launcher %s"
 " Command for git grep
 " - fzf#vim#grep(command, with_column, [options], [fullscreen])
 command! -bang -nargs=* GGrep

@@ -1,0 +1,9 @@
+export GOPATH=$HOME/go
+export GOROOT=/usr/local/opt/go/libexec
+export HOMEBREW_GITHUB_API_TOKEN=
+export KUBE_EDITOR="/usr/local/bin/vim"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/bin"
+export PATH="/usr/local/opt/node@8/bin:$PATH"
+export PATH=$HOME/bin:$PATH
+export PATH=$PATH:$GOPATH/bin:/usr/local/sbin:/usr/local/opt/python/libexec/bin
+export ZSH=/Users/kevincashman/.oh-my-zsh
