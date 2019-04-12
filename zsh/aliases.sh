@@ -1,10 +1,10 @@
 alias grin="grep -rIn"
 alias ll="ls -lh"
-alias vim='/usr/local/bin/vim'
 alias vimconfig="vim ~/.vim/vimrc"
 alias vundlesync="vim +PluginInstall +PluginUpdate +PluginRemove +qall"
 alias zshconfig="vim ~/.zshrc"
 alias watch='watch '
+alias sop='ssh ops'
 
 # Kubernetes aliases
 alias k="kubectl"

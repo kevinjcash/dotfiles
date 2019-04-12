@@ -7,6 +7,7 @@ augroup vimrcEx
   autocmd FileType text setlocal textwidth=78
   autocmd FileType python setlocal textwidth=79
   autocmd FileType gitcommit setlocal spell textwidth=72
+  autocmd FileType org setlocal nonumber
 
   " Jump to last cursor position unless it's invalid or in an event handler
   autocmd BufReadPost *

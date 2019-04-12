@@ -8,16 +8,10 @@ Plugin 'gmarik/Vundle.vim'
 " Plugin 'lokaltog/vim-easymotion'          " Vim motions on speed!
 Plugin 'raimondi/delimitmate'             " Vim plugin, provides insert mode auto-completion for quotes, parens, brackets, etc.
 Plugin 'valloric/youcompleteme'           " Code completion
-" Plugin 'chikamichi/mediawiki.vim'         " Mediawiki syntax
-" Plugin 'chrisbra/nrrwrgn'                 " A Vim plugin for focussing on a selected region
 Plugin 'gabrielelana/vim-markdown'
 Plugin 'godlygeek/tabular'                " Vim script for text filtering and alignment
 Plugin 'kana/vim-textobj-user'            " Create your own text objects
-" Plugin 'maxbrunsfeld/vim-yankstack'       " A lightweight implementation of emacs's kill-ring for vim
-" Plugin 'mbbill/undotree'                  " View the undo tree
-" Plugin 'scrooloose/syntastic'           " Syntax linter
 Plugin 'w0rp/ale'                         " Async Linting Engine
-" Plugin 'wikimatze/hammer.vim'             " Vim, your markup language of choice, and your browser of choice.
 
 " Syntax Highlighting
 Plugin 'elzr/vim-json'                    " A better JSON for Vim: distinct highlighting of keywords vs values, JSON-specific (non-JS) warnings, quote concealing.
@@ -38,40 +32,42 @@ Plugin 'tpope/vim-commentary'   " Comment things out
 Plugin 'tpope/vim-dispatch'     " Dispatch build and test jobs
 Plugin 'tpope/vim-eunuch'       " Helpers for UNIX
 Plugin 'tpope/vim-fugitive'     " Git wrapper
-" Plugin 'tpope/vim-rails'        " Ruby on Rails power tools
 Plugin 'tpope/vim-rhubarb'      " Github
 Plugin 'tpope/vim-sensible'     " Sensible defaults
 Plugin 'tpope/vim-surround'     " Wrap objects with stuff
 Plugin 'tpope/vim-unimpaired'   " Pairs of handy bracket mappings
 Plugin 'tpope/vim-vinegar'      " Directory browsing
+Plugin 'speeddating.vim'        " Use CTRL-A/X to increment dates, times, and more
 
 " UI
-" Plugin 'airblade/vim-gitgutter'           " Git diff
-" Plugin 'vim-airline/vim-airline'          " Lean & mean status/tabline for vim that's light as air
-" Plugin 'vim-airline/vim-airline-themes'   " Lean & mean status/tabline for vim that's light as air
-" Plugin 'majutsushi/tagbar'                " Vim plugin that displays tags in a window, ordered by scope
+Plugin 'airblade/vim-gitgutter'           " Git diff
+Plugin 'vim-airline/vim-airline'          " Lean & mean status/tabline for vim that's light as air
+Plugin 'vim-airline/vim-airline-themes'   " Lean & mean status/tabline for vim that's light as air
+Plugin 'majutsushi/tagbar'                " Vim plugin that displays tags in a window, ordered by scope
 Plugin 'ntpeters/vim-better-whitespace'   " Better whitespace highlighting for Vim
 
 " File navigation
-" Plugin 'git://git.wincent.com/command-t.git'  " File finder
-" Plugin 'ctrlpvim/ctrlp.vim'                   " Fuzzy file, buffer, mru, tag, etc finder.  http://kien.github.com/ctrlp.vim
-" Plugin 'nixprime/cpsm'                        " A CtrlP matcher, specialized for paths.
 Plugin 'junegunn/fzf.vim'                       " fuh zee find
 
 " tmux
 Plugin 'sjl/vitality.vim'               " Make Vim play nicely with iTerm 2 and tmux.
 Plugin 'christoomey/vim-tmux-navigator' " Seamless navigation between tmux panes and vim splits
 
+" orgmode
+Plugin 'jceb/vim-orgmode'
+Plugin 'utl.vim' " Universal text linking https://www.vim.org/scripts/script.php?script_id=293
+Plugin 'mattn/calendar-vim'
+Plugin 'SyntaxRange' " SyntaxRange http://www.vim.org/scripts/script.php?script_id=4168
+
 " Python
 Plugin 'Yggdroot/indentLine'
 Plugin 'bps/vim-textobj-python'          " Text objects for python
-" Plugin 'tell-k/vim-autopep8'
+Plugin 'tell-k/vim-autopep8'
 Plugin 'python-mode/python-mode'
 
 " Javascript
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'lukeyeager/JavaScript-Indent'
-" Plugin 'leafgarland/typescript-vim'
 
 " Pretty Colors
 Plugin 'flazz/vim-colorschemes'             " beaucoup colors
