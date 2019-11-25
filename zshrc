@@ -1,6 +1,9 @@
 # ZSH
-ZSH_THEME="lambda-mod"
-plugins=(git fancy-ctrl-z docker common-aliases osx virtualenvwrapper virtualenv)
+export ZSH="/Users/cashman/.oh-my-zsh"
+
+ZSH_THEME="lambda"
+
+# plugins=(git fancy-ctrl-z docker common-aliases osx)
 
 # Base16
 BASE16_SHELL=$HOME/.config/base16-shell/
@@ -13,9 +16,13 @@ source $HOME/.zsh/variables.sh
 source $HOME/.zsh/util.sh
 source $HOME/.zsh/fzf.sh
 
-function virtualenv_info {
-    [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
-}
-
 eval "$(ssh-agent -s)"
-ssh-add -K ~/.ssh/salt
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/cashman/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/cashman/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/cashman/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/cashman/google-cloud-sdk/completion.zsh.inc'; fi
