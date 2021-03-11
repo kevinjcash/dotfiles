@@ -1,53 +1,4 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Tagbar - The vim plugin that displays tags in a window, ordered by class etc.
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <silent> <leader>t :TagbarToggle<CR>
-let g:tagbar_autofocus = 1
-let g:tagbar_compact = 1
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" VIM-JSON - Don't conceal quotes
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:vim_json_syntax_conceal = 0
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" VIM-Markdown
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:markdown_enable_folding = 1
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Silver Searcher
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-endif
-
-" bind \ (backward slash) to grep shortcut
-command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-nnoremap \ :Ag<SPACE>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Ultisnips
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:UltiSnipsExpandTrigger="<c-e>"
-" let g:UltiSnipsListSnippets="<c-l>"
-" If you want :UltiSnipsEdit to split your window.
-"  let g:UltiSnipsEditSplit="vertical"
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" YouCompleteMe
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_key_list_previous_completion=['<Up>']
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " python-mode
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:pymode_python = 'python3'
@@ -58,12 +9,12 @@ let g:pymode_virtualenv = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fzf
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set rtp+=/usr/local/opt/fzf
 set rtp+=~/.fzf
-nmap ; :Buffers<CR>
+nmap <Leader>b :Buffers<CR>
 nmap <Leader>r :Tags<CR>
 nmap <Leader>f :Files<CR>
-nmap <Leader>a :Ag<CR>
+nmap <Leader>l :Lines<CR>
+nmap <Leader>a :Ag 
 nnoremap <silent> <Leader><Leader> :Files <C-R>=expand('%:h')<CR><CR>
 
 " Customize fzf colors to match your color scheme
@@ -123,3 +74,118 @@ let g:org_agenda_files=['~/org/index.org']
 " UTL
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:utl_cfg_hdl_scm_http_system = "!open -na 'Google Chrome' --args '%u#%f'"
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" terraform
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:terraform_fmt_on_save=1
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" coc
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
+" Make <CR> auto-select the first completion item and notify coc.nvim to
+" format on enter, <cr> could be remapped by other vim plugin
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+let g:coc_global_extensions = ['coc-solargraph']
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Startify
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+function! s:list_commits()
+    let git = 'git -C ~/ru/platform'
+    let commits = systemlist(git .' log --oneline | head -n10')
+    let git = 'G'. git[1:]
+    return map(commits, '{"line": matchstr(v:val, "\\s\\zs.*"), "cmd": "'. git .' show ". matchstr(v:val, "^\\x\\+") }')
+endfunction
+
+let g:startify_lists = [
+            \ { 'header': ['   MRU'],            'type': 'files' },
+            \ { 'header': ['   MRU '. getcwd()], 'type': 'dir' },
+            \ { 'header': ['   Sessions'],       'type': 'sessions' },
+            \ { 'header': ['   Commits'],        'type': function('s:list_commits') },
+            \ ]
+
+let g:startify_bookmarks = [ '~/ru/platform', '~/ru/rigup' ]
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" NERDTREE
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
+
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" nnoremap <leader>n :NERDTreeVCS<CR> :NERDTreeFind<CR>
+" nnoremap <leader>n :NERDTreeToggle<CR>
+" let NERDTreeMinimalUI = 1
+" let NERDTreeDirArrows = 1
+
+" let NERDTreeFind='f'
+
+" " Check if NERDTree is open or active
+" function! IsNERDTreeOpen()        
+"   return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+" endfunction
+
+" " Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
+" " file, and we're not in vimdiff
+" function! SyncTree()
+"   if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
+"     NERDTreeFind
+"     wincmd p
+"   endif
+" endfunction
+
+" " Highlight currently open buffer in NERDTree
+" autocmd BufRead * call SyncTree()
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Tagbar
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:tagbar_type_yaml = {
+    \ 'ctagstype' : 'yaml',
+    \ 'kinds' : [
+        \ 'a:anchors',
+        \ 's:section',
+        \ 'e:entry'
+    \ ],
+  \ 'sro' : '.',
+    \ 'scope2kind': {
+      \ 'section': 's',
+      \ 'entry': 'e'
+    \ },
+    \ 'kind2scope': {
+      \ 's': 'section',
+      \ 'e': 'entry'
+    \ },
+    \ 'sort' : 0
+    \ }
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" EasyMotion
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+" `s{char}{label}`
+nmap <Leader>s <Plug>(easymotion-overwin-f)
+
+" Turn on case-insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)

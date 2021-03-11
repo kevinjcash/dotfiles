@@ -48,3 +48,16 @@ function! OpenChangedFiles()
 endfunction
 command! OpenChangedFiles :call OpenChangedFiles()
 
+function! SetBackgroundMode(...)
+    let l:new_bg = "light"
+    let l:mode = systemlist("defaults read -g AppleInterfaceStyle")[0]
+    if l:mode ==? "dark"
+        let l:new_bg = "dark"
+    else
+        let l:new_bg = "light"
+    endif
+    if &background !=? l:new_bg
+        let &background = l:new_bg
+    endif
+endfunction
+

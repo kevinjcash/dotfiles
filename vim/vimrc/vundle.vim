@@ -8,9 +8,9 @@ Plugin 'gmarik/Vundle.vim'
 
 " Plugin 'lokaltog/vim-easymotion'          " Vim motions on speed!
 Plugin 'raimondi/delimitmate'             " Vim plugin, provides insert mode auto-completion for quotes, parens, brackets, etc.
-" Plugin 'valloric/youcompleteme'           " Code completion
+" Plugin 'ycm-core/youcompleteme'           " Code completion
 " Plugin 'gabrielelana/vim-markdown'
-" Plugin 'w0rp/ale'                         " Async Linting Engine
+Plugin 'w0rp/ale'                         " Async Linting Engine
 
 " Syntax Highlighting
 Plugin 'elzr/vim-json'                    " A better JSON for Vim: distinct highlighting of keywords vs values, JSON-specific (non-JS) warnings, quote concealing.
@@ -24,7 +24,7 @@ Plugin 'stephpy/vim-yaml'                 " Yaml syntax
 Plugin 'fatih/vim-go'
 
 " Tim Pope gets his own section
-Plugin 'tpope/vim-bundler'      " Lightweight support for Ruby's Bundler
+" Plugin 'tpope/vim-bundler'      " Lightweight support for Ruby's Bundler
 Plugin 'tpope/vim-commentary'   " Comment things out
 Plugin 'tpope/vim-dispatch'     " Dispatch build and test jobs
 Plugin 'tpope/vim-eunuch'       " Helpers for UNIX
@@ -59,12 +59,17 @@ Plugin 'christoomey/vim-tmux-navigator' " Seamless navigation between tmux panes
 " Javascript
 Plugin 'jelera/vim-javascript-syntax'
 " Plugin 'lukeyeager/JavaScript-Indent'
+" Plugin 'jxnblk/vim-mdx-js'
+
+" Terraform
+Plugin 'hashivim/vim-terraform'
 
 " Pretty Colors
 " Plugin 'flazz/vim-colorschemes'             " beaucoup colors
 " Plugin 'altercation/vim-colors-solarized'   " Solarized
 Plugin 'chriskempson/base16-vim'
 Plugin 'junegunn/rainbow_parentheses.vim' " Rainbow braces for better readability
+Plugin 'junegunn/seoul256.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required

@@ -4,12 +4,12 @@ if [ -e /usr/local/opt/fzf/shell/completion.zsh ]; then
   . /usr/local/opt/fzf/shell/completion.zsh
 fi
 
-# fzf via local installation
-if [ -e ~/.fzf ]; then
-  _append_to_path ~/.fzf/bin
-  . ~/.fzf/shell/key-bindings.zsh
-  . ~/.fzf/shell/completion.zsh
-fi
+# # fzf via local installation
+# if [ -e ~/.fzf ]; then
+#   _append_to_path ~/.fzf/bin
+#   . ~/.fzf/shell/key-bindings.zsh
+#   . ~/.fzf/shell/completion.zsh
+# fi
 
 # fzf + ag configuration
 if _has fzf && _has ag; then

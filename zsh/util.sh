@@ -21,3 +21,8 @@ _is() {
 _color() {
   return $( [ -z "$INSIDE_EMACS" -a -z "$VIMRUNTIME" ] )
 }
+
+# autoload -U colors; colors
+# source /usr/local/etc/zsh-kubectl-prompt/kubectl.zsh
+# RPROMPT='%{$fg[blue]%}($ZSH_KUBECTL_PROMPT)%{$reset_color%}'
+

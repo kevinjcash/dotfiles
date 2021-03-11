@@ -15,6 +15,11 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
+tnoremap <c-j> <c-w>j
+tnoremap <c-k> <c-w>k
+tnoremap <c-h> <c-w>h
+tnoremap <c-l> <c-w>l
+
 " Can't be bothered to understand ESC vs <c-c> in insert mode
 imap <c-c> <esc>
 
@@ -24,7 +29,7 @@ function! MapCR()
 endfunction
 call MapCR()
 
-nnoremap <leader><leader> <c-^>
+" nnoremap <leader><leader> <c-^>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ARROW KEYS ARE UNACCEPTABLE
@@ -48,3 +53,6 @@ map <leader>v :view %%
 "endfunction
 
 set pastetoggle=<F2>
+
+" Open help vertically, on the right
+cnoreabbrev H vert bo h

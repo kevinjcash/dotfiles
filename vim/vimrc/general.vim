@@ -67,6 +67,7 @@ set scrolloff=3
 
 " Store temporary files in a central spot
 :let g:netrw_dirhistmax = 0
+let netrw_keepdir = 0
 
 " Run commands with bash for compatibility
 set shell=bash
@@ -101,3 +102,9 @@ set autochdir
 if has('python3')
     silent! python3 1
 endif
+
+let g:indentLine_char = '⦙'
+
+set shell=/bin/zsh
+
+runtime ftplugin/man.vim

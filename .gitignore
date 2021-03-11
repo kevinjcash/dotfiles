@@ -58,3 +58,7 @@ target/
 
 # OS
 .DS_Store
+
+zsh/secrets.sh
+vim/plugged
+

@@ -4,10 +4,13 @@
 augroup vimrcEx
   " Clear all autocmds in the group
   autocmd!
-  autocmd FileType text setlocal textwidth=78
-  autocmd FileType python setlocal textwidth=79
+  autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType helm setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType haml,yaml BracelessEnable +indent +fold +highlight
   autocmd FileType gitcommit setlocal spell textwidth=72
   autocmd FileType org setlocal nonumber
+  autocmd FileType python setlocal textwidth=79
+  autocmd FileType text setlocal textwidth=78
 
   " Jump to last cursor position unless it's invalid or in an event handler
   autocmd BufReadPost *
@@ -27,5 +30,6 @@ augroup vimrcEx
   " Note, perl automatically sets foldmethod in the syntax file
   " autocmd Syntax python setlocal foldmethod=syntax
   autocmd Syntax python normal zR
+
 augroup END
 
