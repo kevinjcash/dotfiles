@@ -47,3 +47,6 @@ if [ -f '/Users/cashman/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/c
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # eval "$(register-python-argcomplete pipx)"
+
+# Created by `userpath` on 2021-03-18 15:46:46
+export PATH="$PATH:/Users/cashman/.local/bin"

@@ -11,6 +11,8 @@ augroup vimrcEx
   autocmd FileType org setlocal nonumber
   autocmd FileType python setlocal textwidth=79
   autocmd FileType text setlocal textwidth=78
+  autocmd FileType json setlocal foldmethod=syntax ts=2 sts=2 sw=2 expandtab
+  autocmd FileType markdown let b:delimitMate_nesting_quotes = ['`']
 
   " Jump to last cursor position unless it's invalid or in an event handler
   autocmd BufReadPost *

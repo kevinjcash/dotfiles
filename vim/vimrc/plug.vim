@@ -11,6 +11,12 @@ Plug 'honza/vim-snippets'
 Plug 'yegappan/grep'
 Plug 'tweekmonster/braceless.vim'
 Plug 'easymotion/vim-easymotion'
+Plug 'jxnblk/vim-mdx-js'
+Plug 'vimwiki/vimwiki'
+Plug 'michal-h21/vim-zettel'
+Plug 'plasticboy/vim-markdown'
+Plug 'equal-l2/vim-base64'
+Plug 'amiorin/vim-fenced-code-blocks'
 
 Plug 'tpope/vim-commentary'   " Comment things out
 Plug 'tpope/vim-dispatch'     " Dispatch build and test jobs
@@ -24,6 +30,9 @@ Plug 'tpope/vim-vinegar'      " Directory browsing
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-speeddating'  " Use CTRL-A/X to increment dates, times, and more
+Plug 'tpope/vim-abolish'      " Coercions and stuff'
+Plug 'tpope/vim-ragtag'
+Plug 'tpope/vim-endwise'
 
 Plug 'preservim/tagbar'
 Plug 'mhinz/vim-startify'

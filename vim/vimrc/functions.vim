@@ -1,8 +1,10 @@
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" MULTIPURPOSE TAB KEY
-" Indent if we're at the beginning of a line. Else, do completion.
+" multipurpose tab key
+" indent if we're at the beginning of a line. else, do completion.
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 
+"
+"
 " function! InsertTabWrapper()
 "     let col = col('.') - 1
 "     if !col || getline('.')[col - 1] !~ '\k'
@@ -59,5 +61,50 @@ function! SetBackgroundMode(...)
     if &background !=? l:new_bg
         let &background = l:new_bg
     endif
+endfunction
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Go to Next/Previous line with indention
+" https://vi.stackexchange.com/a/12870
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! GoToNextIndent(inc)
+    " Get the cursor current position
+    let currentPos = getpos('.')
+    let currentLine = currentPos[1]
+    let matchIndent = 0
+
+    " Look for a line with the same indent level without going out of the buffer
+    while !matchIndent && currentLine != line('$') + 1 && currentLine != -1
+        let currentLine += a:inc
+        let matchIndent = indent(currentLine) == indent('.')
+    endwhile
+
+    " If a line is found go to this line
+    if (matchIndent)
+        let currentPos[1] = currentLine
+        call setpos('.', currentPos)
+    endif
+endfunction
+
+nnoremap ]i :call GoToNextIndent(1)<CR>
+nnoremap [i :call GoToNextIndent(-1)<CR>
+
+""""
+" Convert markdown list outline to headers
+" currently assumes 2 spaces per indention level
+""""
+function! ConvertMarkdownListToHeaders() range
+    let currentLine = a:firstline
+
+    while currentLine <= line('$') && currentLine <= a:lastline
+        let indention = indent(currentLine)
+        if (indent(currentLine) > 12)
+            let indention = 12
+        endif
+        let heading = (indention / 2) + 1
+        :call setline(currentLine, substitute(getline(currentLine), "\w*- ", repeat("#", heading) . " ", ""))
+        let currentLine += 1
+    endwhile
 endfunction
 
