@@ -9,18 +9,19 @@ augroup vimrcEx
   autocmd FileType haml,yaml BracelessEnable +indent +fold +highlight
   autocmd FileType gitcommit setlocal spell textwidth=72
   autocmd FileType org setlocal nonumber
-  autocmd FileType python setlocal textwidth=79
+  autocmd FileType python setlocal textwidth=79 sw=4 sts=4 et
   autocmd FileType text setlocal textwidth=78
   autocmd FileType json setlocal foldmethod=syntax ts=2 sts=2 sw=2 expandtab
   autocmd FileType markdown let b:delimitMate_nesting_quotes = ['`']
+  autocmd FileType typescript setlocal ts=2 sts=2 sw=2
+
+  autocmd BufRead *obsidian/* let g:vimwiki_key_mappings = { 'all_maps': 1, }
 
   " Jump to last cursor position unless it's invalid or in an event handler
   autocmd BufReadPost *
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
     \   exe "normal g`\"" |
     \ endif
-
-  autocmd FileType python set sw=4 sts=4 et
 
   autocmd! BufRead,BufNewFile *.sass setfiletype sass
 

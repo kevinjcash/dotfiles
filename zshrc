@@ -1,3 +1,9 @@
+if [ $(ps ax | grep ssh-agent | wc -l) -gt 0 ] ; then 
+  true;
+else 
+  eval "$(ssh-agent -s)"
+fi
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -16,7 +22,6 @@ plugins=(git fancy-ctrl-z docker common-aliases osx zsh-kubectl-prompt)
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
-
 source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh/variables.sh
 source $HOME/.zsh/secrets.sh
@@ -24,12 +29,6 @@ source $HOME/.zsh/aliases.sh
 source $HOME/.zsh/functions.sh
 source $HOME/.zsh/util.sh
 source $HOME/.zsh/fzf.sh
-
-if [ $(ps ax | grep ssh-agent | wc -l) -gt 0 ] ; then 
-  true;
-else 
-  eval "$(ssh-agent -s)"
-fi
 
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
@@ -50,3 +49,4 @@ if [ -f '/Users/cashman/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/c
 
 # Created by `userpath` on 2021-03-18 15:46:46
 export PATH="$PATH:/Users/cashman/.local/bin"
+eval "$(rbenv init -)"

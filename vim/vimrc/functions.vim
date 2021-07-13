@@ -103,7 +103,7 @@ function! ConvertMarkdownListToHeaders() range
             let indention = 12
         endif
         let heading = (indention / 2) + 1
-        :call setline(currentLine, substitute(getline(currentLine), "\w*- ", repeat("#", heading) . " ", ""))
+        :call setline(currentLine, substitute(getline(currentLine), " *- ", repeat("#", heading) . " ", ""))
         let currentLine += 1
     endwhile
 endfunction

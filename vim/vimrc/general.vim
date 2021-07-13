@@ -108,3 +108,5 @@ let g:indentLine_char = '⦙'
 set shell=/bin/zsh
 
 runtime ftplugin/man.vim
+
+" let g:ale_disable_lsp = 1

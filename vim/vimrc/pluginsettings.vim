@@ -201,3 +201,7 @@ map <Leader>k <Plug>(easymotion-k)
 " Wiki and zettelkasten
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:vimwiki_list = [{'path':'/Users/cashman/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/Default', 'ext':'.md', 'syntax':'markdown'}]
+
+let g:vimwiki_key_mappings = { 'all_maps': 0, }
+
+map <Leader>ww <Plug>VimwikiIndex<CR>
