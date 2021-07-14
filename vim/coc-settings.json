@@ -1,9 +1,10 @@
 {
   "languageserver": {
     "terraform": {
-      "command": "terraform-lsp",
-      "filetypes": ["terraform"],
-      "initializationOptions": {}
+        "command": "terraform-ls",
+        "filetypes": ["terraform"],
+        "initializationOptions": {}
+        }
     }
   },
   "diagnostic": {

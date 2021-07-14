@@ -7,7 +7,7 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export ZSH=/Users/kevincashman/.oh-my-zsh
 export SECRET_KEY_BASE=foo
 export BAT_THEME="base16"
-export CLOUDSDK_PYTHON=/usr/local/Cellar/python@3.8/3.8.8/bin/python3.8
+export CLOUDSDK_PYTHON=/opt/homebrew/opt/python@3.8/libexec/bin/python
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
