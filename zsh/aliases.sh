@@ -23,6 +23,9 @@ alias kg="kubectl get"
 alias kl="kubectl logs"
 alias kuc="kubectl config use-context"
 alias kp="kubectl get pods"
+alias kt="kubetail"
+complete -F __start_kubectl k
+
 
 # Git aliases
 alias gs="git status"

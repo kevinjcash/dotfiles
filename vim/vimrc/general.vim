@@ -110,3 +110,8 @@ set shell=/bin/zsh
 runtime ftplugin/man.vim
 
 " let g:ale_disable_lsp = 1
+
+" Set more natural split directions
+set splitbelow
+set splitright
+

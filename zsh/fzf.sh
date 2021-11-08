@@ -1,8 +1,8 @@
 # fzf via Homebrew
-if [ -e /usr/local/opt/fzf/shell/completion.zsh ]; then
-  . /usr/local/opt/fzf/shell/key-bindings.zsh
-  . /usr/local/opt/fzf/shell/completion.zsh
-fi
+# if [ -e /usr/local/opt/fzf/shell/completion.zsh ]; then
+#   . /usr/local/opt/fzf/shell/key-bindings.zsh
+#   . /usr/local/opt/fzf/shell/completion.zsh
+# fi
 
 # # fzf via local installation
 # if [ -e ~/.fzf ]; then
@@ -10,6 +10,11 @@ fi
 #   . ~/.fzf/shell/key-bindings.zsh
 #   . ~/.fzf/shell/completion.zsh
 # fi
+
+if [ -e ~/.vim/plugged/fzf/shell/completion.zsh ]; then
+    . ~/.vim/plugged/fzf/shell/key-bindings.zsh
+    . ~/.vim/plugged/fzf/shell/completion.zsh
+fi
 
 # fzf + ag configuration
 if _has fzf && _has ag; then

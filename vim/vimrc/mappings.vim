@@ -56,3 +56,6 @@ set pastetoggle=<F2>
 
 " Open help vertically, on the right
 cnoreabbrev H vert bo h
+
+" maximize current split or return to previous
+noremap <C-w>m :MaximizerToggle<CR>

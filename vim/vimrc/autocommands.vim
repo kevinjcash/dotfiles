@@ -16,6 +16,7 @@ augroup vimrcEx
   autocmd FileType typescript setlocal ts=2 sts=2 sw=2
 
   autocmd BufRead *obsidian/* let g:vimwiki_key_mappings = { 'all_maps': 1, }
+  autocmd BufWritePost ~/code/docs/source/*.rst Make -C $(git root) html
 
   " Jump to last cursor position unless it's invalid or in an event handler
   autocmd BufReadPost *

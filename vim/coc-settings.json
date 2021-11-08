@@ -2,10 +2,10 @@
   "languageserver": {
     "terraform": {
         "command": "terraform-ls",
-        "filetypes": ["terraform"],
+        "args": ["serve"],
+        "filetypes": ["terraform", "tf"],
         "initializationOptions": {}
         }
-    }
   },
   "diagnostic": {
     "displayByAle": true

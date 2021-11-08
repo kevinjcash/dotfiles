@@ -11,6 +11,7 @@ Plug 'towolf/vim-helm'
 Plug 'honza/vim-snippets'
 Plug 'yegappan/grep'
 Plug 'tweekmonster/braceless.vim'
+Plug 'jeetsukumaran/vim-indentwise'
 Plug 'easymotion/vim-easymotion'
 Plug 'jxnblk/vim-mdx-js'
 Plug 'vimwiki/vimwiki'
@@ -19,6 +20,9 @@ Plug 'plasticboy/vim-markdown'
 Plug 'equal-l2/vim-base64'
 Plug 'amiorin/vim-fenced-code-blocks'
 Plug 'godlygeek/tabular'
+Plug 'wesQ3/vim-windowswap'
+Plug 'chr4/nginx.vim'
+Plug 'szw/vim-maximizer'
 
 " Tim pope section
 Plug 'tpope/vim-commentary'   " Comment things out

@@ -67,3 +67,7 @@ if [ -f '/Users/kevincashman/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ke
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/kevincashman/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/kevincashman/google-cloud-sdk/completion.zsh.inc'; fi
+
+source <(kubectl completion zsh)
+
+eval "$(rbenv init - zsh)"
