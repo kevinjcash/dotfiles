@@ -16,7 +16,7 @@ export ZSH="/Users/kevincashman/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-plugins=(git fancy-ctrl-z docker common-aliases osx)
+plugins=(git fancy-ctrl-z docker common-aliases macos)
 
 # # Base16
 BASE16_SHELL=$HOME/.config/base16-shell/

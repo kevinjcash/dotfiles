@@ -23,6 +23,7 @@ Plug 'godlygeek/tabular'
 Plug 'wesQ3/vim-windowswap'
 Plug 'chr4/nginx.vim'
 Plug 'szw/vim-maximizer'
+Plug 'andrewstuart/vim-kubernetes'
 
 " Tim pope section
 Plug 'tpope/vim-commentary'   " Comment things out
