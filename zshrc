@@ -20,7 +20,7 @@ export ZSH="/Users/kevincashman/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-plugins=(git fancy-ctrl-z docker common-aliases macos)
+plugins=(git fancy-ctrl-z docker common-aliases macos asdf)
 
 
 source $HOME/.zsh/zsh_plugins.sh

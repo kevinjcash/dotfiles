@@ -18,3 +18,12 @@ get_token () {
 ecr_login () {
     eval $(aws ecr get-login --no-include-email)
 }
+
+proxy () {
+    PROJECT=$(jq --arg DB "$1" -r '.[$DB].project' ~/Documents/database_info.json)
+    REGION=$(jq --arg DB "$1" -r '.[$DB].region' ~/Documents/database_info.json)
+    NAME=$(jq --arg DB "$1" -r '.[$DB].name' ~/Documents/database_info.json)
+    PORT=${2:-5432}
+
+    cloud_sql_proxy --instances=$PROJECT:$REGION:$NAME=tcp:$PORT
+}

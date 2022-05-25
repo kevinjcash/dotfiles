@@ -24,6 +24,7 @@ Plug 'wesQ3/vim-windowswap'
 Plug 'chr4/nginx.vim'
 Plug 'szw/vim-maximizer'
 Plug 'andrewstuart/vim-kubernetes'
+Plug 'sk1418/Join' " Join lines smartly
 
 " Tim pope section
 Plug 'tpope/vim-commentary'   " Comment things out

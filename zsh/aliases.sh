@@ -5,9 +5,9 @@ bindkey "^[e" end-of-line
 
 alias grin="grep -rIn"
 alias ll="ls -lh"
-# alias vim="/usr/local/bin/vim"
+# alias vim="/opt/homebrew/Cellar/macvim/8.2-172"
 alias vimconfig="vim ~/.vim/vimrc"
-alias vimplugsync="vim +PlugInstall +PlugClean +qall"
+alias vimplugsync="vim +PlugInstall +PlugUpdate +PlugClean +qall"
 alias zshconfig="vim ~/.zshrc"
 alias watch='watch '
 
@@ -24,6 +24,7 @@ alias kl="kubectl logs"
 alias kuc="kubectl config use-context"
 alias kp="kubectl get pods"
 alias kt="kubetail"
+alias proxy_rabbit="kubectl port-forward -n rabbitmq svc/rabbitmq 15672"
 complete -F __start_kubectl k
 
 
