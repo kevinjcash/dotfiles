@@ -5,7 +5,7 @@ bindkey "^[e" end-of-line
 
 alias grin="grep -rIn"
 alias ll="ls -lh"
-# alias vim="/opt/homebrew/Cellar/macvim/8.2-172"
+alias vim="/opt/homebrew/Cellar/vim/9.0.0200/bin/vim"
 alias vimconfig="vim ~/.vim/vimrc"
 alias vimplugsync="vim +PlugInstall +PlugUpdate +PlugClean +qall"
 alias zshconfig="vim ~/.zshrc"

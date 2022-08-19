@@ -3,9 +3,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'raimondi/delimitmate'
 Plug 'w0rp/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript', {'for': 'javascript'}
 Plug 'leafgarland/typescript-vim'
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', {'for': 'go'}
 Plug 'cespare/vim-toml'
 Plug 'towolf/vim-helm'
 Plug 'honza/vim-snippets'
@@ -25,6 +25,7 @@ Plug 'chr4/nginx.vim'
 Plug 'szw/vim-maximizer'
 Plug 'andrewstuart/vim-kubernetes'
 Plug 'sk1418/Join' " Join lines smartly
+Plug 'google/vim-jsonnet'
 
 " Tim pope section
 Plug 'tpope/vim-commentary'   " Comment things out
@@ -36,7 +37,7 @@ Plug 'tpope/vim-rhubarb'      " Github
 Plug 'tpope/vim-surround'     " Wrap objects with stuff
 Plug 'tpope/vim-unimpaired'   " Pairs of handy bracket mappings
 Plug 'tpope/vim-vinegar'      " Directory browsing
-Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rails', {'for': 'ruby'}
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-speeddating'  " Use CTRL-A/X to increment dates, times, and more
 Plug 'tpope/vim-abolish'      " Coercions and stuff'

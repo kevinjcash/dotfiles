@@ -1,11 +1,17 @@
 {
   "languageserver": {
     "terraform": {
-        "command": "terraform-ls",
-        "args": ["serve"],
-        "filetypes": ["terraform", "tf"],
-        "initializationOptions": {}
-        }
+      "command": "terraform-ls",
+      "args": ["serve"],
+      "filetypes": ["terraform", "tf"],
+      "initializationOptions": {}
+    },
+    "jsonnet": {
+      "command": "jsonnet-language-server",
+      "args": ["-t"],
+      "rootPatterns": [".git/", "jsonnetfile.json"],
+      "filetypes": ["jsonnet","libsonnet"]
+    }
   },
   "diagnostic": {
     "displayByAle": true
