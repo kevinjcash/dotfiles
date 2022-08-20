@@ -5,7 +5,7 @@ bindkey "^[e" end-of-line
 
 alias grin="grep -rIn"
 alias ll="ls -lh"
-# alias vim="/opt/homebrew/Cellar/macvim/8.2-172"
+alias vim="/opt/homebrew/Cellar/vim/9.0.0200/bin/vim"
 alias vimconfig="vim ~/.vim/vimrc"
 alias vimplugsync="vim +PlugInstall +PlugUpdate +PlugClean +qall"
 alias zshconfig="vim ~/.zshrc"
@@ -38,9 +38,4 @@ alias jbr='jira view $(git rev-parse --abbrev-ref HEAD)'
 alias tf=terraform
 
 # gCloud
-alias kprod="gcloud config set project rigup-production && genie kubectl:switch production"
-alias kstaging="gcloud config set project rigup-staging && genie kubectl:switch staging"
-alias kdev="gcloud config set project rigup-development && genie kubectl:switch development"
-alias kplatform="gcloud config set project rigup-platform && gcloud container clusters get-credentials spinnaker --zone us-central1-c --project rigup-platform"
-alias ksand="gcloud config set project rigup-sandbox && gcloud container clusters get-credentials argotest --zone us-central1-c --project rigup-sandbox"
 alias gcp='gcloud config set project'
