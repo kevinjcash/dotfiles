@@ -25,6 +25,8 @@ Plug 'chr4/nginx.vim'
 Plug 'szw/vim-maximizer'
 Plug 'andrewstuart/vim-kubernetes'
 Plug 'sk1418/Join' " Join lines smartly
+Plug 'tweekmonster/django-plus.vim'
+Plug 'vim-test/vim-test'
 
 " Tim pope section
 Plug 'tpope/vim-commentary'   " Comment things out
