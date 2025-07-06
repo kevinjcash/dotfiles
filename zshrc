@@ -5,20 +5,20 @@ else
 fi
 
 # Base16
-BASE16_SHELL=$HOME/.config/base16-shell/
-[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+# BASE16_SHELL=$HOME/.config/base16-shell/
+# [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 # ZSH
 export ZSH="/Users/cashman/.oh-my-zsh"
 
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 
 source $HOME/.zsh/zsh_plugins.sh
 source $ZSH/oh-my-zsh.sh
@@ -30,6 +30,7 @@ source $HOME/.zsh/util.sh
 source $HOME/.zsh/fzf.sh
 
 plugins=(git fancy-ctrl-z docker common-aliases macos)
+autoload -U compinit && compinit
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
@@ -37,7 +38,7 @@ export PATH="$PATH:$HOME/.rvm/bin"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
@@ -54,12 +55,18 @@ export CPPFLAGS="-I/opt/homebrew/opt/sqlite/include"
 export LDFLAGS="-L/opt/homebrew/opt/zlib/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/zlib/include"
 
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+source <(kubectl completion zsh)
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/cashman/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/cashman/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/cashman/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/cashman/google-cloud-sdk/completion.zsh.inc'; fi
 
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+eval "$(starship init zsh)"
 
-source <(kubectl completion zsh)

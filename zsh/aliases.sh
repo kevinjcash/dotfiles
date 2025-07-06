@@ -5,11 +5,12 @@ bindkey "^[e" end-of-line
 
 alias grin="grep -rIn"
 alias ll="ls -lh"
-alias vim="/opt/homebrew/Cellar/vim/9.0.0200/bin/vim"
+# alias vim="/opt/homebrew/Cellar/vim/9.1.0/bin/vim"
 alias vimconfig="vim ~/.vim/vimrc"
 alias vimplugsync="vim +PlugInstall +PlugUpdate +PlugClean +qall"
 alias zshconfig="vim ~/.zshrc"
-alias watch='watch '
+# alias watch='watch '
+alias cdu='cd $(git root)'
 
 # Kubernetes aliases
 alias k="kubectl"
@@ -32,6 +33,7 @@ complete -F __start_kubectl k
 alias gs="git status"
 alias ga="git add"
 alias gc="git commit"
+alias gp="git push"
 alias jbr='jira view $(git rev-parse --abbrev-ref HEAD)'
 
 # Terraform

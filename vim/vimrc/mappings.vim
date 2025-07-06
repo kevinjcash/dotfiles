@@ -59,3 +59,10 @@ cnoreabbrev H vert bo h
 
 " maximize current split or return to previous
 noremap <C-w>m :MaximizerToggle<CR>
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" NERDTree
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <C-t> :NERDTreeToggle<CR>
+

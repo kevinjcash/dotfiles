@@ -115,3 +115,4 @@ runtime ftplugin/man.vim
 set splitbelow
 set splitright
 
+
