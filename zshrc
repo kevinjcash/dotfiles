@@ -55,18 +55,21 @@ export CPPFLAGS="-I/opt/homebrew/opt/sqlite/include"
 export LDFLAGS="-L/opt/homebrew/opt/zlib/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/zlib/include"
 
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+# . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 source <(kubectl completion zsh)
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+# Pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
+
+eval "$(starship init zsh)"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/cashman/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/cashman/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/cashman/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/cashman/google-cloud-sdk/completion.zsh.inc'; fi
-
-eval "$(starship init zsh)"
-

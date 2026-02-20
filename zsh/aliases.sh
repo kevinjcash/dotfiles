@@ -23,7 +23,7 @@ alias ke="kubectl exec -it"
 alias kg="kubectl get"
 alias kl="kubectl logs"
 alias kuc="kubectl config use-context"
-alias kp="kubectl get pods"
+alias kp="kubectl get pods --sort-by=.metadata.creationTimestamp"
 alias kt="kubetail"
 alias proxy_rabbit="kubectl port-forward -n rabbitmq svc/rabbitmq 15672"
 complete -F __start_kubectl k
